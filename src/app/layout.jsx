@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import estedadFont from "./constant/localFonts";
+import Header from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,9 @@ export default function RootLayout({ children }) {
       <body
         suppressHydrationWarning={true}
         className={`${estedadFont.variable} bg-white`}
-      >{children}</body>
+      >
+        <Header />
+        {children}</body>
     </html>
   );
 }

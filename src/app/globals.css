@@ -10,3 +10,32 @@ body {
   min-height: 100vh;
   user-select: none;
 }
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -7%;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+}
+
+.backgroundHsl {
+  background: hsla(0, 0%, 4%, 0.8);
+  backdrop-filter: blur(0.1rem);
+}
