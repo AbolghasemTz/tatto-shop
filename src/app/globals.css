@@ -39,3 +39,47 @@ body {
   background: hsla(0, 0%, 4%, 0.8);
   backdrop-filter: blur(0.1rem);
 }
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: -80px;
+  background-color: rgb(33, 33, 33);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.swiper-button-next{
+  color: transparent;
+  background-image: url("../../public/images/arrow.svg");
+  background-repeat: no-repeat;
+ 
+}
+.swiper-button-prev{
+  color: transparent;
+  transform: rotate(180deg);
+  background-image: url("../../public/images/arrowr.svg");
+  background-repeat: no-repeat;
+ 
+}
+
+@media screen and (max-width: 786px) {
+  .swiper-slide img{
+    height: 70vh;
+  }
+}

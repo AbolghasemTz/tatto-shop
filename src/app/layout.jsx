@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import estedadFont from "./constant/localFonts";
 import Header from "./components/Header";
+import Slider from "./components/Slider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         className={`${estedadFont.variable} bg-white`}
       >
         <Header />
+        <Slider />
         {children}</body>
     </html>
   );
