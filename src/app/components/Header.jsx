@@ -23,12 +23,12 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   console.log(isOpen);
   return (
-    <div className=" bg-gray-800 h-20">
-      <div className="md:flex justify-between items-center h-full w-full px-10 hidden ">
-        <div className="">
+    <div className="  h-20 z-[99]">
+      <div className="md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
+        <div className="z-[99]">
           <Image src="/images/logo.png" width={144} height={76} alt="logo" />
         </div>
-        <ul className="flex">
+        <ul className="flex z-[99]">
           {menus.map((menu, index) => (
             <li key={index} className="mx-4 font-semibold text-white relative">
               <Link className="hover-underline-animation " href={menu.href}>
@@ -37,8 +37,8 @@ function Header() {
             </li>
           ))}
         </ul>
-        <div className="flex justify-center items-center">
-          <div className="flex border-2 border-white p-1 rounded-lg overflow-hidden cursor-pointer">
+        <div className="flex justify-center items-center z-[99]">
+          <div className="flex border-2 shadow-sm border-white p-1 rounded-lg overflow-hidden cursor-pointer">
             <CiLogin className="text-white rotate-180 ml-3" size={28} />
             <span className="text-white">ورود</span>
           </div>
