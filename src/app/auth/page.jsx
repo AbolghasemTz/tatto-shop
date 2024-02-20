@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 const RESEND_TIME = 90;
 function AuthPage({ onClose }) {
   const router = useRouter();
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
   const [otp, setOtp] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [time, setTime] = useState(RESEND_TIME);
