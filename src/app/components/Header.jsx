@@ -7,10 +7,13 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
-
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import Drawer from "./Drower";
 import { toPersianNumbers } from "../utils/toPersianNumber";
 import HeaderMobile from "./HeaderMobile";
+import AuthPage from "../auth/page";
+import Modal from "../common/Modal";
 const menus = [
   { name: "خانه", href: "/" },
   { name: "فروشگاه", href: "/shop" },
@@ -21,29 +24,50 @@ const menus = [
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({ default: { duration: 1 } });
+    tl.from(".logo", { y: -100, opacity: 0, stagger: 0.1 });
+    tl.from(".link", { y: -100, opacity: 0, stagger: 0.1 });
+    tl.from(".login", { y: -100, opacity: 0, stagger: 0.1 });
+  });
   return (
-    <div className="  h-20 z-[99]">
+    <div className="bg-slate-800  h-20 z-[99] ">
       <div className="md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
-        <div className="z-[99]">
+        <div className="z-[99] logo">
           <Image src="/images/logo.png" width={144} height={76} alt="logo" />
         </div>
         <ul className="flex z-[99]">
           {menus.map((menu, index) => (
             <li key={index} className="mx-4 font-semibold text-white relative">
-              <Link className="hover-underline-animation " href={menu.href}>
+              <Link className="hover-underline-animation link" href={menu.href}>
                 {menu.name}
               </Link>
             </li>
           ))}
         </ul>
         <div className="flex justify-center items-center z-[99]">
-          <div className="flex border-2 shadow-sm border-white p-1 rounded-lg overflow-hidden cursor-pointer">
-            <CiLogin className="text-white rotate-180 ml-3" size={28} />
-            <span className="text-white">ورود</span>
+          <div className="">
+            <button
+              onClick={() => setIsOpenModal(true)}
+              href="/auth"
+              className="login flex border-2 shadow-sm border-white p-1 rounded-lg overflow-hidden cursor-pointer"
+            >
+              <CiLogin className="text-white rotate-180 ml-3" size={28} />
+              <span className="text-white">ورود</span>
+            </button>
+            <Modal
+              open={isOpenModal}
+              onClose={() => setIsOpenModal(false)}
+              title="  ثبت نام / ورود"
+            >
+              <AuthPage onClose={() => setIsOpenModal(false)}  />
+            </Modal>
           </div>
+
           <div>
-            <button onClick={() => setIsOpen(true)}>
+            <button className="login" onClick={() => setIsOpen(true)}>
               <FaBarsStaggered
                 size={24}
                 className="text-white mr-5 cursor-pointer"
@@ -51,7 +75,7 @@ function Header() {
             </button>
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
               <div className="mt-[20%] px-6">
-                <div className="mb-4">
+                <div className="mb-4 ">
                   <Image
                     src="/images/logo.png"
                     width={144}
@@ -104,7 +128,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <HeaderMobile isOpen={isOpen} setIsOpen={setIsOpen} menus={menus}/>
+      <HeaderMobile isOpen={isOpen} setIsOpen={setIsOpen} menus={menus} />
     </div>
   );
 }
