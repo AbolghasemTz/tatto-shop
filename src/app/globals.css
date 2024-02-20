@@ -11,6 +11,20 @@ body {
   user-select: none;
 }
 
+@layer components {
+  .text_field-input {
+    @apply w-full py-3 px-4 rounded-xl text-secondary-900 border border-secondary-100 bg-secondary-100 hover:border-primary-500 focus:border-primary-500 focus:bg-white transition-all duration-300 ease-out focus:shadow-lg focus:shadow-purple-100 dark:focus:shadow-secondary-300
+  }
+
+  .btn {
+    @apply mt-8 font-bold rounded-xl transition-all duration-300
+  }
+
+  .btn_primary {
+    @apply mt-8 font-bold rounded-xl transition-all duration-300 px-4 py-3 bg-black text-white hover:opacity-80 shadow-lg shadow-primary-300
+  }
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -39,6 +53,7 @@ body {
   background: hsla(0, 0%, 4%, 0.8);
   backdrop-filter: blur(0.1rem);
 }
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -64,22 +79,34 @@ body {
   object-fit: cover;
 }
 
-.swiper-button-next{
-  color: transparent;
+.swiper-button-next {
+  color: transparent !important;
   background-image: url("../../public/images/arrow.svg");
   background-repeat: no-repeat;
- 
+  animation: fadeIn 20s !important;
 }
-.swiper-button-prev{
-  color: transparent;
+
+.swiper-button-prev {
+  color: transparent !important;
   transform: rotate(180deg);
   background-image: url("../../public/images/arrowr.svg");
   background-repeat: no-repeat;
- 
+  animation: fadeIn 20s !important;
+
 }
 
 @media screen and (max-width: 786px) {
-  .swiper-slide img{
+  .swiper-slide img {
     height: 70vh;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

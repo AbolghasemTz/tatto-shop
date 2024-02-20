@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLogin } from "react-icons/ci";
@@ -10,8 +10,12 @@ import { FaTelegram } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 
 import Drawer from "./Drower";
+import Modal from "../common/Modal";
+import AuthPage from "../auth/page";
+
 
 function HeaderMobile({ isOpen, setIsOpen, menus }) {
+  const [isOpenModal, setIsOpenModal] = useState(false);
   return (
     <div className="md:hidden flex justify-between items-center h-full w-full px-5  z-[99]">
       <div className="z-[99]">
@@ -60,9 +64,16 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
         <Image src="/images/logo.png" width={144} height={76} alt="logo" />
       </div>
       <div className="flex justify-center items-center z-[99]">
-        <div className="flex border-2 border-white p-1 rounded-lg overflow-hidden cursor-pointer">
+        <div onClick={() => setIsOpenModal(true)} className="flex border-2 border-white p-1 rounded-lg overflow-hidden cursor-pointer">
           <CiLogin className="text-white rotate-180 ml-3" size={24} />
           <span className="text-white text-sm">ورود</span>
+          <Modal
+        open={isOpenModal}
+        onClose={() => setIsOpenModal(false)}
+        title="ورود"
+      >
+        <AuthPage  onClose={() => setIsOpenModal(false)} />
+      </Modal>
         </div>
       </div>
     </div>
