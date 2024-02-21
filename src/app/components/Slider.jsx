@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -24,16 +24,31 @@ export default function Slider() {
       repeat: -1,
       yoyo: true,
     });
+
+    gsap.from(".product-img", {
+      delay: 4,
+      opacity: 0,
+      y: -800,
+      ease: "expo.inOut",
+    });
+
     const tl = gsap.timeline({ defaults: { opacity: 0, stagger: 0.4 } });
+  
     tl.from(".animate-text-one", {
-      y: -100,
-      
+      delay: 2.2,
+
+      y: 50,
+      ease: "expo.inOut",
     });
     tl.from(".animate-text-four", {
+      opacity: 0,
       y: 100,
       delay:1
     });
+  
   }, {});
+
+
   return (
     <div>
       <Swiper
@@ -41,7 +56,7 @@ export default function Slider() {
         spaceBetween={0}
         loop={true}
         autoplay={{
-          delay: 5500,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         centeredSlides={true}
@@ -61,15 +76,24 @@ export default function Slider() {
               />
             </div>
             <div className="w-[70%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className="animate-text-one text-white  md:text-2xl text-sm ">
-              تتوها می‌توانند برای همیشه در ذهن ما
-                ماندگار شوند تتوها می‌توانند نشانگر ارتباط عمیق با مفهوم یا
-                ایده‌ای ویژه باشند.
+              <p className="animate-text-one text-white tracking-[10px]  font-bold  md:text-[240px] text-[50px] font-[poppins] ">
+                Tattoo
               </p>
             </div>
-            <div className="animate-text-four bg-white py-1 px-3 rounded-md cursor-pointer text-black flex items-center gap-4 absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-16">
-              <Link href="/">تتو ها</Link>
-              <FaLongArrowAltLeft />
+            <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-16">
+              <div className="animate-text-four bg-white py-1 px-3 rounded-md cursor-pointer text-black flex items-center gap-4 ">
+                <Link href="/">تتو ها</Link>
+                <FaLongArrowAltLeft />
+              </div>
+            </div>
+            <div className="  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <Image
+                src="/images/tattoo-matchiin.png"
+                width={900}
+                height={900}
+                alt="tatto-matchin"
+                className=" product-img"
+              />
             </div>
           </div>
         </SwiperSlide>
@@ -86,9 +110,8 @@ export default function Slider() {
             </div>
             <div className="w-[70%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <p className="animate-text-one text-white  md:text-2xl text-sm ">
-                مطمئناً. این قطب علاقه‌ای می‌تواند باشد. تتوها داستان‌های
-                خودشان را دارند. تتوها می‌توانند یک اظهارنامه شخصی
-                باشند..
+                مطمئناً. این قطب علاقه‌ای می‌تواند باشد. تتوها داستان‌های خودشان
+                را دارند. تتوها می‌توانند یک اظهارنامه شخصی باشند..
               </p>
             </div>
             <div className=" animate-text-four absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-14">
@@ -102,15 +125,7 @@ export default function Slider() {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="  absolute cursor-pointer bottom-0 left-1/2  transform -translate-x-1/2 -translate-y-1/2 md:block hidden  z-[99]">
-        <Image
-          className="animate-down"
-          src="/images/down-page.png"
-          width={20}
-          height={20}
-          alt="down"
-        />
-      </div>
+     
     </div>
   );
 }

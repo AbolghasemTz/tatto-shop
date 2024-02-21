@@ -28,9 +28,9 @@ function Header() {
 
   useGSAP(() => {
     const tl = gsap.timeline({ default: { duration: 1 } });
-    tl.from(".logo", { y: -100, opacity: 0, stagger: 0.1 });
-    tl.from(".link", { y: -100, opacity: 0, stagger: 0.1 });
-    tl.from(".login", { y: -100, opacity: 0, stagger: 0.1 });
+    tl.from(".logo", { delay: 1, opacity: 0, x: 20, ease: "expo.inOut" });
+    tl.from(".login", { delay: 0.2, opacity: 0, x: -20, ease: "expo.inOut" });
+    tl.from(".link", { delay: 1.2, opacity: 0, y: -20, ease: "power3.inOut" });
   });
   return (
     <div className="bg-slate-800  h-20 z-[99] ">
@@ -62,7 +62,7 @@ function Header() {
               onClose={() => setIsOpenModal(false)}
               title="  ثبت نام / ورود"
             >
-              <AuthPage onClose={() => setIsOpenModal(false)}  />
+              <AuthPage onClose={() => setIsOpenModal(false)} />
             </Modal>
           </div>
 
