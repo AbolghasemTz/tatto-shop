@@ -114,8 +114,8 @@ export default function Slider() {
                 را دارند. تتوها می‌توانند یک اظهارنامه شخصی باشند..
               </p>
             </div>
-            <div className=" animate-text-four absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-14">
-              <div className="bg-white py-1 px-3 rounded-md cursor-pointer text-black flex items-center gap-4">
+            <div className="  absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-20">
+              <div className= "animate-text-four bg-white py-1 px-3 rounded-md cursor-pointer text-black flex items-center gap-4">
                 <Link className="" href="/">
                   تتو ها
                 </Link>

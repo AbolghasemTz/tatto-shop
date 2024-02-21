@@ -1,7 +1,24 @@
-import Image from "next/image";
+"use client";
 import React from "react";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function CountNumber() {
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".animate-text", {
+      scrollTrigger: {
+        trigger: ".animate-text",
+       
+      },
+
+      opacity: 0,
+      scale: 0,
+      rotation: 720,
+    });
+  });
   return (
     <div className="relative w-full h-screen mb-10  overflow-hidden ">
       <Image
@@ -18,6 +35,9 @@ function CountNumber() {
         width={1800}
         height={400}
       />
+      <h3 className="animate-text absolute left-1/2 top-1/2 transform -translate-x-1/2  md:text-5xl tracking-widest text-2xl text-white ">
+        تتو های زیبا
+      </h3>
     </div>
   );
 }

@@ -39,10 +39,9 @@ function Categories() {
     gsap.from(".category .scroll-trigger", {
       scrollTrigger: {
         trigger: ".category .scroll-trigger",
-        opacity:0
       },
-     
 
+      opacity: 0,
       y: 100,
       stagger: 0.3,
       yoyo: true,
