@@ -1,4 +1,6 @@
 import Categories from "./components/Categories";
+import CountNumber from "./components/CountNumber";
+import Gallery from "./components/Gallery";
 import Slider from "./components/Slider";
 import "./globals.css";
 
@@ -7,6 +9,8 @@ export default function Home() {
    <main>
     <Slider />
     <Categories />
+    <Gallery />
+    <CountNumber />
    </main>
   );
 }

@@ -15,7 +15,7 @@ const category = [
   },
   {
     title: "شخصیت خود را نشان ",
-    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  گرافیک است",
+    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
     id: 2,
     img: "/images/cat2.png",
   },
@@ -39,8 +39,9 @@ function Categories() {
     gsap.from(".category .scroll-trigger", {
       scrollTrigger: {
         trigger: ".category .scroll-trigger",
+        opacity:0
       },
-      opacity: 0,
+     
 
       y: 100,
       stagger: 0.3,
@@ -48,7 +49,7 @@ function Categories() {
     });
   });
   return (
-    <div className="my-24 md:px-32 ">
+    <div className="my-24 md:px-16 ">
       <div className="category grid grid-cols-12 gap-8 ">
         {category.map((cat) => (
           <div
