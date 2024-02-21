@@ -94,10 +94,13 @@ body {
   animation: fadeIn 20s !important;
 
 }
+#scrollButton {
+  animation: floatAnimation 2s ease-in-out infinite;
+}
 
 @media screen and (max-width: 786px) {
   .swiper-slide img {
-    height: 70vh;
+    height: 100vh;
   }
 }
 
@@ -110,3 +113,5 @@ body {
     opacity: 1;
   }
 }
+
+
