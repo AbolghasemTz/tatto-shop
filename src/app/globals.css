@@ -75,7 +75,7 @@ body {
 .swiper-slide img {
   display: block;
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   object-fit: cover;
 }
 
@@ -84,23 +84,24 @@ body {
   background-image: url("../../public/images/arrow.svg");
   background-repeat: no-repeat;
   animation: fadeIn 20s !important;
+
+
 }
 
 .swiper-button-prev {
   color: transparent !important;
-  transform: rotate(180deg);
   background-image: url("../../public/images/arrowr.svg");
   background-repeat: no-repeat;
   animation: fadeIn 20s !important;
+  right: 20px !important;
 
 }
-#scrollButton {
-  animation: floatAnimation 2s ease-in-out infinite;
-}
+
+
 
 @media screen and (max-width: 786px) {
   .swiper-slide img {
-    height: 100vh;
+    max-height: 100vh;
   }
 }
 
@@ -113,5 +114,3 @@ body {
     opacity: 1;
   }
 }
-
-
