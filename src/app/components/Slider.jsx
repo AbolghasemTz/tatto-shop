@@ -33,7 +33,7 @@ export default function Slider() {
       ease: "expo.inOut",
     });
 
-    const tl = gsap.timeline({ defaults: { opacity: 0, stagger: 0.4 } });
+    const tl = gsap.timeline({ defaults: { opacity: 0,stagger:0.5} });
   
     tl.from(".animate-text-one", {
       delay: 2.2,
@@ -51,7 +51,7 @@ export default function Slider() {
 
 
   return (
-    <div>
+    <div className="bg-black">
       <Swiper
         slidesPerView={1}
         spaceBetween={0}

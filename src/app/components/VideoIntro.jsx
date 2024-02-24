@@ -22,7 +22,7 @@ export default function (props) {
   return (
     <>
  <div className="">
- <div className="md:w-[60%] w-[90%]  max-h-max relative  mb-10 mt-24 mx-auto flex justify-center items-center ">
+ <div className="md:w-[60%] w-[83%]  max-h-max relative  mb-10 mt-24 mx-auto flex justify-center items-center ">
         <Player
           autoPlay
           
