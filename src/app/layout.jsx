@@ -4,6 +4,7 @@ import estedadFont from "./constant/localFonts";
 import Header from "./components/Header";
 import { Toaster } from 'react-hot-toast';
 import Providers from "./Providers";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <Providers>
         <Header />
           {children}
+          <Footer />
         </Providers>
        
         </body>

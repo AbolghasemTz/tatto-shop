@@ -23,7 +23,7 @@ function TestimonialSlider() {
       className="mySwiper"
     >
       <SwiperSlide>
-        <div className=" h-screen flex items-center justify-center">
+        <div className=" md:h-screen flex items-center justify-center -mb-10">
           <div className="max-w-[900px] relative w-full py-10 overflow-hidden">
             <div className="flex items-center justify-center flex-col gap-y-6">
               <div className="md:w-36  md:h-36 w-24  h-24  rounded-full !impoertant">
