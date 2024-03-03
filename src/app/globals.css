@@ -82,35 +82,18 @@ body {
 .swiper-button-next {
   color: transparent !important;
   background-image: url("../../public/images/arrow.svg");
-  background-repeat: no-repeat;
-  animation: fadeIn 20s !important;
-
-
+  
+  
 }
 
 .swiper-button-prev {
   color: transparent !important;
   background-image: url("../../public/images/arrowr.svg");
-  background-repeat: no-repeat;
-  animation: fadeIn 20s !important;
   right: 20px !important;
 
 }
 
 
 
-@media screen and (max-width: 786px) {
-  .swiper-slide img {
-    max-height: 100vh;
-  }
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
 
-  100% {
-    opacity: 1;
-  }
-}
