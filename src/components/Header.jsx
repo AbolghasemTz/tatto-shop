@@ -36,31 +36,21 @@ function Header() {
   const { user } = data?.data || {};
   const pathname = usePathname();
 
-  useGSAP(() => {
-    gsap.from(".logo", { delay: 1, opacity: 0, x: 20, ease: "expo.inOut" });
-    gsap.from(".login", { delay: 0.2, opacity: 0, x: -20, ease: "expo.inOut" });
-    gsap.from(".link", {
-      delay: 1.2,
-      opacity: 0,
-      y: -20,
-      ease: "power3.inOut",
-    });
-  });
 
   const toggleDropdown = () => {
     setIsOpenDropDown(!isOpenDropDown);
     if (!isOpenDropDown) {
       gsap.fromTo(
         "#dropdown-content",
-        { y: -20, opacity: 0 },
+        { y: -80, opacity: 0 },
         { duration: 0.5, y: 0, opacity: 1, ease: "power2.inOut" }
       );
     }
   };
   return (
-    <div className="bg-slate-800  h-20 z-[99] ">
-      <div className="md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
-        <div className="z-[99] logo">
+    <div className="bg-[#272B35]  h-20 z-[99] ">
+      <div  className=" md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
+        <div className="z-[99] ">
           <Image src="/images/logo.png" width={144} height={76} alt="logo" />
         </div>
         <ul className="flex z-[99]">
@@ -74,7 +64,7 @@ function Header() {
         </ul>
         <div className="flex justify-center items-center z-[99]">
           {user && user ? (
-            <div className="">
+            <div className="z-[99]">
               <button
                 onClick={toggleDropdown}
                 href="/#"
@@ -86,7 +76,7 @@ function Header() {
 
               <div
                 id="dropdown-content"
-                className="absolute top-20 left-10 bg-white w-56  mx-auto  rounded-md shadow-lg "
+                className="absolute top-20 left-10 bg-white w-56  mx-auto  rounded-md shadow-lg z-[99]"
               >
                 {isOpenDropDown && (
                   <div className="p-4 ">
@@ -166,7 +156,9 @@ function Header() {
                   size={28}
                   className="text-white mr-5 cursor-pointer"
                 />
-                <span className="absolute top-0 right-10 bg-white w-4 h-4 text-sm text-red-500 rounded-full flex justify-center items-center">0</span>
+                <span className="absolute top-0 right-10 bg-white w-4 h-4 text-sm text-red-500 rounded-full flex justify-center items-center">
+                  0
+                </span>
               </div>
             ) : (
               <button className="login" onClick={() => setIsOpen(true)}>
@@ -178,7 +170,7 @@ function Header() {
             )}
 
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-              <div className="mt-[20%] px-6">
+              <div className="mt-[20%] px-6 ">
                 <div className="mb-4 ">
                   <Image
                     src="/images/logo.png"

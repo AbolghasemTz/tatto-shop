@@ -1,123 +1,59 @@
 "use client";
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { TextPlugin } from "gsap/TextPlugin";
+import SplitType from "split-type";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import { FaLongArrowAltLeft } from "react-icons/fa";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-// import required modules
-import { Pagination, Navigation, Autoplay } from "swiper";
-
-export default function Slider() {
+// animation
+function Slider() {
   useGSAP(() => {
- 
-
-    gsap.from(".product-img", {
-      delay: 4,
+    gsap.from(".animate-gsap", { duration: 1, y: -200, opacity: 0 });
+    gsap.from(".animate-gsap-desc", { delay: 0.8, duration: 1, y: -200, opacity: 0 });
+    gsap.from(".animate-gsap-image", { delay: 1, duration: 1, y: -200, opacity: 0 });
+    gsap.registerPlugin(TextPlugin);
+     gsap.from("#text-container", {
+      delay: 1.4,
+      duration: 1,
       opacity: 0,
-      y: -800,
-      ease: "expo.inOut",
-    });
-
-    const tl = gsap.timeline({ defaults: { opacity: 0,stagger:0.5} });
-  
-    tl.from(".animate-text-one", {
-      delay: 2.2,
-
-      y: 50,
-      ease: "expo.inOut",
-    });
-    tl.from(".animate-text-four", {
+      y: -200,
+      stagger: 0.5,
       
-      ease: "expo.inOut",
-      y: 100,
-      delay:1
+      ease: "power2.inOut",
     });
-  
-  }, {});
+  });
 
 
   return (
-    <div className="bg-black">
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={0}
-        loop={true}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
-        centeredSlides={true}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <div className="w-full ">
-            <div className="w-full">
-              <Image
-                className="object-cover"
-                src="/images/slide2.jpg"
-                width={1000}
-                height={500}
-                alt="slider"
-              />
-            </div>
-            <div className="w-[70%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className="animate-text-one text-white tracking-[10px]  font-bold  md:text-[240px] text-[50px] font-[poppins] ">
-                Tattoo
-              </p>
-            </div>
-            <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-16">
-            
-            </div>
-            <div className="  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <Image
-                src="/images/tattoo-matchiin.png"
-                width={900}
-                height={900}
-                alt="tatto-matchin"
-                className=" product-img"
-              />
-            </div>
+    <div className="bg-[#272B35] h-screen animate-gsap -mt-20 flex justify-center items-center">
+      <div className="w-[80%] flex justify-around items-center md:flex-row flex-col-reverse">
+        <div className="relative">
+          <h1
+            id="text-container"
+            className="absolute -right-72  top-10  text-[#EE4266] opacity-50 -rotate-90 text-[50px]  font-extrabold font-mono"
+          >
+            تـــتـــو
+          </h1>
+          <div className="animate-gsap-desc flex flex-col justify-center">
+            <p className="text-white md:text-4xl text-2xl font-semibold tracking-wider md:leading-10">
+              با کیفیت ترین تجهیزات تتو,
+              <br />
+              <br />
+              شروع کن
+            </p>
+            <Link href="/products" className="mt-10 block btn btn_primary w-36 text-center">
+              فروشگاه
+            </Link>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full ">
-            <div className="w-full">
-              <Image
-                className="object-cover"
-                src="/images/slide1.jpg"
-                width={1000}
-                height={500}
-                alt="slider"
-              />
-            </div>
-            <div className="w-[70%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className="animate-text-one text-white tracking-[10px]  font-bold  md:text-[240px] text-[50px] font-[poppins] ">
-                Tattoo
-              </p>
-            </div>
-            {/* <div className="  absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-20">
-              <div className= "animate-text-four bg-white py-1 px-3 rounded-md cursor-pointer text-black flex items-center gap-4">
-                <p className="">
-                  تتو ها
-                </p>
-                <FaLongArrowAltLeft />
-              </div>
-            </div> */}
-          </div>
-        </SwiperSlide>
-      </Swiper>
-     
+        </div>
+        <div className="animate-gsap-image bg-white rounded-full md:w-[350px] w-[250px] mt-0 mb-10 md:mt-0">
+          <Image className="object-cover" src="/images/tatt.png" width={400} height={400} alt="" />
+        </div>
+      </div>
     </div>
   );
 }
+
+export default Slider;

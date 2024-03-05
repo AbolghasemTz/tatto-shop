@@ -15,13 +15,24 @@ import AuthPage from "../app/(user)/auth/page";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { toPersianNumbers } from "../utils/toPersianNumber";
 import { useGetUser } from "../hooks/useAuth";
+import gsap from "gsap";
 
 function HeaderMobile({ isOpen, setIsOpen, menus }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
+
   const { data } = useGetUser();
   const { user } = data?.data || {};
-
+  const toggleDropdown = () => {
+    setIsOpenDropDown(!isOpenDropDown);
+    if (!isOpenDropDown) {
+      gsap.fromTo(
+        "#dropdown-content",
+        { y: -40, opacity: 0 },
+        { duration: 0.5, y: 0, opacity: 1, ease: "power2.inOut" }
+      );
+    }
+  };
   return (
     <div className="md:hidden flex justify-between items-center h-full w-full px-5  z-[99]">
       <div className="z-[99]">
@@ -75,7 +86,8 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
         {user ? (
           <div className="">
             <button
-              onClick={() => setIsOpenDropDown(!isOpenDropDown)}
+             
+              onClick={toggleDropdown}
               href="/#"
               id=""
               className="login flex border-2 shadow-sm border-white p-1 rounded-lg overflow-hidden cursor-pointer"
@@ -84,7 +96,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
               <MdKeyboardArrowDown className="text-white" size={20} />
             </button>
 
-            <div className="absolute top-20 md:left-10 left-5 bg-white w-56  mx-auto  rounded-md shadow-lg ">
+            <div id="dropdown-content" className="absolute top-20 md:left-10 left-5 bg-white w-56  mx-auto  rounded-md shadow-lg ">
               {isOpenDropDown && (
                 <div className="p-4">
                   <div className="border-b border-gray-300 ">
@@ -103,7 +115,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
                         height={18}
                         alt="icon"
                       />
-                      <Link className="text-sm" href="">
+                      <Link className="text-sm" href="/profile">
                         پروفایل شما
                       </Link>
                     </div>
