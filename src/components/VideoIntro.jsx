@@ -22,10 +22,10 @@ export default function (props) {
   return (
     <>
       <div className="">
-        <div className="md:w-[60%] w-[83%]  max-h-max relative  mb-10 mt-24 mx-auto flex justify-center items-center ">
+        <div className="md:w-[60%]  w-[83%]  max-h-max relative  mb-10 mt-24 mx-auto flex justify-center items-center ">
           <Player
-            
-            poster="/assets/poster.png"
+            className="z-[99]"
+            poster="/images/poster.webp"
             src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
           >
             <ControlBar autoHide={false} disableDefaultControls={false}>

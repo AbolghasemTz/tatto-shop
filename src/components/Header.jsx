@@ -34,8 +34,8 @@ function Header() {
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
   const { data } = useGetUser();
   const { user } = data?.data || {};
+  const cartLength = user?.cart?.products?.length;
   const pathname = usePathname();
-
 
   const toggleDropdown = () => {
     setIsOpenDropDown(!isOpenDropDown);
@@ -49,7 +49,7 @@ function Header() {
   };
   return (
     <div className="bg-[#272B35]  h-20 z-[99] ">
-      <div  className=" md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
+      <div className=" md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
         <div className="z-[99] ">
           <Image src="/images/logo.png" width={144} height={76} alt="logo" />
         </div>
@@ -150,23 +150,25 @@ function Header() {
           )}
 
           <div>
-            {pathname === "/products" ? (
-              <div className="login relative">
-                <CiShoppingBasket
-                  size={28}
-                  className="text-white mr-5 cursor-pointer"
-                />
-                <span className="absolute top-0 right-10 bg-white w-4 h-4 text-sm text-red-500 rounded-full flex justify-center items-center">
-                  0
-                </span>
-              </div>
-            ) : (
+            {pathname === "/" ? (
               <button className="login" onClick={() => setIsOpen(true)}>
                 <FaBarsStaggered
                   size={24}
                   className="text-white mr-5 cursor-pointer"
                 />
               </button>
+            ) : (
+              <div className="login relative">
+                <Link href="/cart">
+                  <CiShoppingBasket
+                    size={32}
+                    className="text-white mr-5 cursor-pointer"
+                  />
+                </Link>
+                <span className="absolute top-0 right-10 bg-white w-5 h-5 text-sm text-black rounded-full flex justify-center items-center">
+                  {cartLength}
+                </span>
+              </div>
             )}
 
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>

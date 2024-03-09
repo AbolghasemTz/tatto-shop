@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
         className={`${estedadFont.variable} bg-white`}
       >
+        
         <Toaster />
         <Providers>
         <Header />

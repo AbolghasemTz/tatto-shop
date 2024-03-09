@@ -1,3 +1,4 @@
+import TabProducts from "@/components/TabProducts";
 import Categories from "../../components/Categories";
 import ContactMe from "../../components/ContactMe";
 import CountNumber from "../../components/CountNumber";
@@ -12,11 +13,12 @@ export default function Home() {
    <main className="">
     <Slider />
     <Categories />
-    <Gallery />
     <CountNumber />
+    <Gallery />
+    <TabProducts />
     <TestimonialSlider />
     <VideoIntro />
-    <ContactMe />
+    
    </main>
   );
 }

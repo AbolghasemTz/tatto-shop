@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const { fontFamily } = require("tailwindcss/defaultTheme");
-
+const withMT = require("@material-tailwind/react/utils/withMT");
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
@@ -10,7 +10,7 @@ function withOpacity(variableName) {
   };
 }
 
-module.exports = {
+module.exports = ({
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/common/**/*.{js,ts,jsx,tsx,mdx}",
@@ -60,4 +60,5 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
+)
