@@ -1,5 +1,5 @@
+import { addProduct, getOneProductById, getProducts, removeProduct, updateProduct } from "@/services/ProductServices";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { addProduct, getOneProductById, getProducts, removeProduct, updateProduct } from "../services/ProductServices";
 
 export const useGetProducts = () => useQuery({
     queryKey:["get-products"],

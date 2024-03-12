@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import { logout } from "@/services/userServices";
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -9,6 +8,7 @@ import { AiOutlineProfile } from "react-icons/ai";
 import { BsBox2Heart } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import { GrContactInfo } from "react-icons/gr";
+import { loguot } from "@/services/AuthServices";
 const routSidebar = [
   { name: "صفحه اصلی", href: "/", icon: <GoHome size={20} /> },
   { name: "پروفایل", href: "/profile", icon: <AiOutlineProfile size={20} /> },
@@ -23,7 +23,7 @@ function Sidebar() {
   const router = useRouter();
   
   const logOutHandler = async () => {
-    await logout();
+    await loguot();
     router.replace("/");
   };
   return (

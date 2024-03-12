@@ -1,5 +1,5 @@
-import { addToCart, decrementFromCart } from "@/services/cartServices";
 import { useMutation } from "@tanstack/react-query";
+import {  addToCart, decrementFromCart } from "@/services/cartServices";
 
 
 export const useAddToCart = () => {

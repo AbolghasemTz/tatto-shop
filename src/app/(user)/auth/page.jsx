@@ -4,10 +4,10 @@ import SendOtpForm from "./SendOtpForm";
 
 import toast from "react-hot-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { checkOtp, completeProfile, getOtp } from "../../../services/userServices";
 import CheckOtpForm from "./CheckOtpForm";
 import CompleteProfile from "./CompleteProfile";
 import { useRouter } from "next/navigation";
+import { checkOtp, completeProfile, getOtp } from "@/services/AuthServices";
 // import { useForm } from 'react-hook-form';
 
 const RESEND_TIME = 90;
@@ -58,7 +58,7 @@ function AuthPage({ onClose }) {
     e.preventDefault();
     try {
       const { data } = await mutateCheckOtp({ phoneNumber, otp });
-      toast.success(data?.message);
+      toast.success("کد تایید شد !خوش آمدید");
       if (data?.user?.isActive) {
         onClose();
         queryClient.invalidateQueries(["get-user"])

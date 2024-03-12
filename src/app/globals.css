@@ -54,55 +54,6 @@ body {
   backdrop-filter: blur(0.1rem);
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-  margin-top: -80px;
-  background-color: rgb(33, 33, 33);
-}
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100vw;
-  max-height: 100vh;
-  object-fit: cover;
-}
-
-.swiper-button-next {
-  color: transparent !important;
-  background-image: url("../../public/images/arrow.svg");
-  
-  margin-left: 8rem !important;
-}
-
-.swiper-button-prev {
-  color: transparent !important;
-  background-image: url("../../public/images/arrowr.svg");
-  right: 20px !important;
-  margin-right: 8rem !important;
-
-}
-@media  (max-width: 786px) {
-  .swiper-button-next {
- 
-    
-    margin-left: 0rem !important;
-  }
-  
-  .swiper-button-prev {
-    
-    margin-right: 0rem !important;
-  }
-}
 
 

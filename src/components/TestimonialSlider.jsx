@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "../styles/testimonial.css"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

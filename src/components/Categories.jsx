@@ -13,13 +13,13 @@ function Categories() {
  
   return (
     <div id="animate-caegory" >
-     <Title className="my-8 md:px-16 px-4 " title="دسته بندی ها" />
+     <Title className="my-8 text-center " title="دسته بندی ها" />
       <div id="category_scroll"  className="grid grid-cols-6 gap-4 md:px-12 px-4">
         {categories?.map((category) => (
           <div
          
             key={category._id}
-            className=" md:col-span-2 col-span-6 bg-black w-full  rounded-md shadow-md text-white "
+            className="mb-8 md:col-span-2 col-span-6 bg-[#F2F6F7] w-full  rounded-md shadow-md text-black "
           >
             <Link
               className="flex flex-row-reverse justify-around items-center "

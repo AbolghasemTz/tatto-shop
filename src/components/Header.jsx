@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLogin } from "react-icons/ci";
@@ -11,8 +11,6 @@ import { FaTelegram } from "react-icons/fa";
 import { CiShoppingBasket } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import Drawer from "./Drower";
 import { toPersianNumbers } from "../utils/toPersianNumber";
 import HeaderMobile from "./HeaderMobile";
 import AuthPage from "../app/(user)/auth/page";
@@ -32,8 +30,8 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
-  const { data } = useGetUser();
-  const { user } = data?.data || {};
+  const { data, isLoading } = useGetUser();
+  const { user } = data || {};
   const cartLength = user?.cart?.products?.length;
   const pathname = usePathname();
 
@@ -48,12 +46,16 @@ function Header() {
     }
   };
   return (
-    <div className="bg-[#272B35]  h-20 z-[99] ">
-      <div className=" md:flex justify-between items-center h-full w-full px-10 hidden z-[99]">
-        <div className="z-[99] ">
+    <div className="bg-[#272B35]  h-20 ">
+      <div
+        className={` md:flex justify-between items-center h-full w-full px-10  hidden ${
+          isLoading ? "blur-md opacity-70" : "opacity-100 blur-0  "
+        }`}
+      >
+        <div className=" ">
           <Image src="/images/logo.png" width={144} height={76} alt="logo" />
         </div>
-        <ul className="flex z-[99]">
+        <ul className="flex ">
           {menus.map((menu, index) => (
             <li key={index} className="mx-4 font-semibold text-white relative">
               <Link className="hover-underline-animation link" href={menu.href}>
@@ -62,9 +64,9 @@ function Header() {
             </li>
           ))}
         </ul>
-        <div className="flex justify-center items-center z-[99]">
-          {user && user ? (
-            <div className="z-[99]">
+        <div className="flex justify-center items-center ">
+          {user ? (
+            <div className="">
               <button
                 onClick={toggleDropdown}
                 href="/#"
@@ -76,7 +78,7 @@ function Header() {
 
               <div
                 id="dropdown-content"
-                className="absolute top-20 left-10 bg-white w-56  mx-auto  rounded-md shadow-lg z-[99]"
+                className="absolute top-20 left-10 bg-white w-56  mx-auto  rounded-md shadow-lg "
               >
                 {isOpenDropDown && (
                   <div className="p-4 ">
@@ -133,7 +135,7 @@ function Header() {
             <div className="">
               <button
                 onClick={() => setIsOpenModal(true)}
-                href="/auth"
+                href="#"
                 className="login flex border-2 shadow-sm border-white p-1 rounded-lg overflow-hidden cursor-pointer"
               >
                 <CiLogin className="text-white rotate-180 ml-3" size={28} />
@@ -149,80 +151,18 @@ function Header() {
             </div>
           )}
 
-          <div>
-            {pathname === "/" ? (
-              <button className="login" onClick={() => setIsOpen(true)}>
-                <FaBarsStaggered
-                  size={24}
+          <div className="z-[99]">
+            <div className="login relative ">
+              <Link href="/cart">
+                <CiShoppingBasket
+                  size={32}
                   className="text-white mr-5 cursor-pointer"
                 />
-              </button>
-            ) : (
-              <div className="login relative">
-                <Link href="/cart">
-                  <CiShoppingBasket
-                    size={32}
-                    className="text-white mr-5 cursor-pointer"
-                  />
-                </Link>
-                <span className="absolute top-0 right-10 bg-white w-5 h-5 text-sm text-black rounded-full flex justify-center items-center">
-                  {cartLength}
-                </span>
-              </div>
-            )}
-
-            <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-              <div className="mt-[20%] px-6 ">
-                <div className="mb-4 ">
-                  <Image
-                    src="/images/logo.png"
-                    width={144}
-                    height={76}
-                    alt="logo"
-                  />
-                </div>
-                <p className="text-white mb-4 leading-8">
-                  با تتو, هر جزعی از زندگی خودت را میسازی .هویت تو در هر رنگ و
-                  نقش نمایان میشود.
-                </p>
-                <div className="text-white">
-                  <p> ایران , گرگان</p>
-                  <p className="ml-4  my-2">
-                    موبایل:{" "}
-                    <span className="inline-block mr-2">
-                      {toPersianNumbers("0996-002-6303")}
-                    </span>
-                  </p>
-                  <p className="ml-4 ">
-                    {" "}
-                    ایمیل:
-                    <span className="inline-block mr-2 mb-16">
-                      saratattoo@gmail.com
-                    </span>
-                  </p>
-                </div>
-                <div className="flex justify-center items-center gap-x-8 text-white">
-                  <div>
-                    <FaFacebookF
-                      className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
-                      size={28}
-                    />
-                  </div>
-                  <div>
-                    <FaInstagram
-                      className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
-                      size={28}
-                    />
-                  </div>
-                  <div>
-                    <FaTelegram
-                      className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
-                      size={28}
-                    />
-                  </div>
-                </div>
-              </div>
-            </Drawer>
+              </Link>
+              <span className="absolute top-0 right-10 bg-white w-5 h-5 text-sm text-black rounded-full flex justify-center items-center">
+                {cartLength ? cartLength : 0}
+              </span>
+            </div>
           </div>
         </div>
       </div>

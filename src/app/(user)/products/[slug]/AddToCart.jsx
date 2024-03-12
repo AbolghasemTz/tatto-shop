@@ -10,7 +10,7 @@ import { useGetUser } from "@/hooks/useAuth";
 function AddToCart({ product }) {
   const queryClient = useQueryClient();
   const { data } = useGetUser();
-  const { user } = data?.data || {};
+  const { user } = data || {};
  
   const { mutateAsync, isLoading } = useAddToCart();
   //   const router = useRouter();
@@ -34,9 +34,9 @@ function AddToCart({ product }) {
   return (
     <div className="flex-auto text-sm text-center pb-6">
       {inCart(user, product) ? (
-        <Link href="/cart">ادمه سفارش</Link>
+        <Link className="btn btn_primary w-[90%] mx-auto text-center inline-block" href="/cart">ادمه سفارش</Link>
       ) : (
-        <button onClick={addToCartHandler} className="btn btn_primary text-center">
+        <button onClick={addToCartHandler} className="btn btn_primary w-[90%] mx-auto text-center">
           اضافه کردن به سبد خرید
         </button>
       )}

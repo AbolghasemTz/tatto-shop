@@ -8,7 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 function CategoriesSideBar({ categories }) {
   const [isOpenBrand, setIsOpneBrand] = useState(false);
   return (
-    <div className="hidden md:block col-span-4 lg:col-span-3 row-span-2 mr-4">
+    <div className="hidden md:block col-span-4 lg:col-span-3 row-span-2 mr-4 ">
           <div className="bg-white p-5 rounded-lg">
             <div className="mb-7">
               <div className="text-[#353535] font-bold text-xl mb-5">

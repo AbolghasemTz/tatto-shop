@@ -1,19 +1,21 @@
 import React from "react";
 import { ThreeDots } from "react-loader-spinner";
-function Loading({ width = "75", height = "40" }) {
+
+function Loading() {
   return (
     <ThreeDots
-      height={height}
-      width={width}
-      radius={9}
+      height="80"
+      width="80"
+      radius="9"
       color="black"
+      ariaLabel="three-dots-loading"
       wrapperStyle={{
-        dispaly:"flex",
+        display:"flex",
         justifyContent:"center",
-        alignItems:"center",
-        marginTop:"35px"
-    }}
-    visible={true}
+        alingItems:"center"
+      }}
+      wrapperClassName=""
+      visible={true}
     />
   );
 }

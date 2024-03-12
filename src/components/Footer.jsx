@@ -1,75 +1,125 @@
-"use client";
-import Image from "next/image";
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTelegram } from "react-icons/fa";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// icons
+import {
+  BsTelephone,
+  BsInstagram,
+  BsWhatsapp,
+  BsFacebook,
+} from "react-icons/bs";
+import { toPersianNumbers } from "../utils/toPersianNumber";
+
 function Footer() {
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(".animate-logo-footer", {
-      scrollTrigger: {
-        trigger: ".animate-logo-footer",
-      },
-      x: 40,
-      ease: "slow(0.7,0.7,false)",
-      opacity: 0,
-      duration: 1,
-    });
-    gsap.from(".animate-social-footer", {
-      scrollTrigger: {
-        trigger: ".animate-social-footer",
-      },
-      x: -40,
-      ease: "slow(0.7,0.7,false)",
-      opacity: 0,
-      duration: 1,
-    });
-    gsap.from(".animate-menu-footer", {
-      scrollTrigger: {
-        trigger: ".animate-menu-footer",
-      },
-      x: 40,
-      ease: "slow(0.7,0.7,false)",
-      opacity: 0,
-      duration: 1,
-    });
-  });
   return (
-    <div className="bg-black h-[400px] text-white flex flex-col space-y-14 justify-center items-center">
-      <div className="flex justify-center items-center animate-logo-footer">
-        <Image src="/images/logo.png" width={144} height={76} alt="logo" />
+    <footer className="bg-[#111111] pb-4 px-9">
+      {/* top footer */}
+      <div className="grid grid-cols-12 md:gap-x-8 gay-y-6 py-8 ">
+        <div className="md:col-span-4  col-span-12 text-white">
+          <h3 className="font-bold text-2xl tracking-wider">فروشگاه  سارا تتو</h3>
+          <p className="md:text-base text-sm py-8">
+            مهم ترین هدف ما در فروشگاه  امید، جلب و حفظ رضایت شما دوستانی
+            است که سرمایه های ارزشمند این فروشگاه محسوب می شوید. در برابر قیمت
+            های متغیر و گاه غیرمنصفانه بازار، ما در کنار شما هستیم و همواره در
+            تلاشیم تا کالاهای با کیفیت را با گارانتی معتبر و به نازل ترین قیمت
+            در دسترس شما عزیزان قرار دهیم. همیشه حق با مشتری است.
+          </p>
+          <div className=" flex items-center justify-between px-4 py-2 bg-[#292929] rounded-sm">
+            <div>
+              <p>تماس با ما</p>
+              <p className="font-bold tracking-wider">
+                {toPersianNumbers("09960026303")}
+              </p>
+            </div>
+            <div className="p-3 bg-[#065f46] rounded-sm">
+              <BsTelephone className="text-2xl" />
+            </div>
+          </div>
+        </div>
+
+        <div className="md:col-span-4  col-span-12 text-white md:mr-16">
+          <h3 className="font-bold tracking-wider text-2xl md:mt-0 mt-6 ">
+            لینک های مفید
+          </h3>
+          <ul className="py-8  ">
+            <li className="hover:text-[#065f46] duration-200 ease-out cursor-pointer">
+              صفحه محصولات
+            </li>
+            <li className="hover:text-[#065f46] duration-200 ease-out pt-4 cursor-pointer">
+              قوانین و مقررات
+            </li>
+            <li className="hover:text-[#065f46] duration-200 ease-out pt-4 cursor-pointer">
+              درباره ما
+            </li>
+            <li className="hover:text-[#065f46] duration-200 ease-out pt-4 cursor-pointer">
+              تماس با ما
+            </li>
+          </ul>
+        </div>
+
+      
+
+        <div className="md:col-span-4  col-span-12 text-white">
+          <h3 className="font-bold tracking-wider text-2xl md:mt-0 mt-6">
+            ساعت باز بودن فروشگاه
+          </h3>
+
+          <div className="mt-6">
+            <div className="flex items-center justify-between">
+              <p>شنبه</p>
+              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <p>یک شنبه</p>
+              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <p>دوشنبه</p>
+              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <p>سه شنبه</p>
+              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <p>چهار شنبه</p>
+              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <p>پنج شنبه</p>
+              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <p> تعطیلات رسمی</p>
+              <p>بسته</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="flex justify-center items-center md:gap-x-8 gap-x-8 text-white animate-social-footer">
-        <div>
-          <FaFacebookF
-            className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
-            size={28}
-          />
+      {/* bottom footer */}
+      <div className="grid grid-cols-12 md:gap-x-8 gay-y-6 border-t pt-4">
+        <div className="md:col-span-6 col-span-12 text-white ">
+          <div className="flex md:justify-start justify-center md:mt-0 mt-3">
+            <h3 className="text-2xl mt-2 md:mr-3">
+              ساخته شده توسط تیم امید
+            </h3>
+          </div>
         </div>
-        <div>
-          <FaInstagram
-            className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
-            size={28}
-          />
-        </div>
-        <div>
-          <FaTelegram
-            className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
-            size={28}
-          />
+        <div className="md:col-span-6 col-span-12 text-white ">
+          <ul className="flex md:justify-end justify-center items-center gap-x-8">
+            <li className="p-4">
+              <BsInstagram className="text-2xl cursor-pointer hover:text-[#065f46] duration-200" />
+            </li>
+            <li className="p-4">
+              <BsFacebook className="text-2xl cursor-pointer hover:text-[#065f46] duration-200" />
+            </li>
+            <li className="p-4">
+              <BsWhatsapp className="text-2xl cursor-pointer hover:text-[#065f46] duration-200" />
+            </li>
+          </ul>
         </div>
       </div>
-      <ul className="flex justify-center items-center md:gap-x-14 gap-x-8 animate-menu-footer">
-        <li>خانه</li>
-        <li>فروشگاه</li>
-        <li>تماس با ما</li>
-        <li>گالری</li>
-      </ul>
-    </div>
+    </footer>
   );
 }
 

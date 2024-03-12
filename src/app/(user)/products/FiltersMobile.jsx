@@ -18,7 +18,7 @@ function FiltersMobile({ categories }) {
         </div>
         <div className="absolute left-0 text-sm  bg-[#E5F2E9] shadow-md w-full mt-2 rounded-md space-y-2 h-auto">
           {isOpenBrand && (
-            <div classNameName="  py-2 text-xs w-full shadow-md">
+            <div className="  py-2 text-xs w-full shadow-md">
               <ProductFilter categories={categories} />
             </div>
           )}
@@ -33,7 +33,7 @@ function FiltersMobile({ categories }) {
         </div>
         <div className="absolute left-0 text-sm  bg-[#E5F2E9] shadow-md w-full mt-2 rounded-md space-y-2  h-auto">
           {isOpenSort && (
-            <div classNameName="">
+            <div className="">
               <ProductSort />
             </div>
           )}
@@ -44,14 +44,3 @@ function FiltersMobile({ categories }) {
 }
 
 export default FiltersMobile;
-// {isOpenSort && (
-//   <div classNameName="absolute top-12 left-0 bg-[#E5F2E9]  py-2 text-xs w-full shadow-md">
-//     <ProductSort />
-//   </div>
-// )}
-
-// {isOpenBrand && (
-//   <div classNameName="absolute top-12 left-0 bg-[#E5F2E9]  py-2 text-xs w-full shadow-md">
-//     <ProductFilter categories={categories} />
-//   </div>
-// )}

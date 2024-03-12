@@ -5,13 +5,13 @@ import { useGetUser } from "@/hooks/useAuth";
 import TextField from "@/common/TextField";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { updatedProfile } from "@/services/userServices";
+import { updateProfile } from "@/services/AuthServices";
 
 function Me() {
   const { data, isLoading } = useGetUser();
   const queryClient = useQueryClient()
-  const { user } = data?.data || {};
- const {isPending,mutateAsync} =  useMutation({mutationFn:updatedProfile})
+  const { user } = data || {};
+ const {isPending,mutateAsync} =  useMutation({mutationFn:updateProfile})
   const [formData, setFormData] = useState({
     name: user?.name || "",
     email: user?.email || "",

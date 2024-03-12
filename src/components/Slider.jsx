@@ -1,11 +1,10 @@
 "use client";
-import gsap from "gsap";
-import React, { useEffect } from "react";
-import { useGSAP } from "@gsap/react";
+import React from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { TextPlugin } from "gsap/TextPlugin";
-import SplitType from "split-type";
 
 // animation
 function Slider() {
@@ -18,7 +17,7 @@ function Slider() {
       delay: 1.4,
       duration: 1,
       opacity: 0,
-      y: -200,
+      y: -100,
       stagger: 0.5,
       
       ease: "power2.inOut",
@@ -27,12 +26,12 @@ function Slider() {
 
 
   return (
-    <div className="bg-[#272B35] h-screen animate-gsap -mt-20 flex justify-center items-center">
-      <div className="w-[80%] flex justify-around items-center md:flex-row flex-col-reverse">
+    <div className="bg-[#272B35] h-screen animate-gsap  flex justify-center items-center  z-[20]">
+      <div className="w-[80%] flex justify-around items-center md:flex-row flex-col-reverse  z-[20]">
         <div className="relative">
           <h1
             id="text-container"
-            className="absolute -right-72  top-10  text-[#EE4266] opacity-50 -rotate-90 text-[50px]  font-extrabold font-mono"
+            className="absolute -right-72  top-10  text-[#32AB8E] opacity-50 -rotate-90 text-[50px]  font-extrabold font-mono"
           >
             تـــتـــو
           </h1>

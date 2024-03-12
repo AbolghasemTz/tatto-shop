@@ -15,22 +15,22 @@ async function Menu({ searchParams }) {
   const { categories } = await getCategories();
 
   return (
-    <div className="grid grid-cols-4 gap-4 h-screen bg-gray-50">
-      <div className="md:hidden block  col-span-4">
+    <div className="grid grid-cols-4 gap-4 min-h-screen  bg-gray-50 ">
+      <div className="md:hidden block  col-span-4 -mb-16">
         <FiltersMobile categories={categories} />
       </div>
 
       {/* sidebar */}
 
       
-        <div className="md:col-span-1 md:block hidden  mb-6 mt-14 rounded-md px-6  ">
+        <div className="md:col-span-1 md:block hidden  mb-6 mt-14 rounded-md px-6  bg-[#F2F6F7]">
           <CategoriesSideBar categories={categories} />
           
          
         
         
       </div>
-        <div className="md:col-span-3 col-span-4  flex justify-around  my-4  flex-wrap  ">
+        <div className=" md:col-span-3 col-span-4  flex justify-around  my-4  flex-wrap ">
         <Product products={products} />
       </div>
     </div>

@@ -40,7 +40,7 @@ function CartSummery({ payDetail }) {
             class="border-0 w-full max-w-[150px] bg-transparent p-2 text-gray-700 outline-none focus:outline-none"
             placeholder="AS-DSE"
           />
-          <button class="border-0 bg-black px-4 text-white outline-none">
+          <button class="border-0 bg-[#417F56] px-4 text-white outline-none">
             تایید
           </button>
         </div>
@@ -55,7 +55,7 @@ function CartSummery({ payDetail }) {
       </div>
     </div>
     <div>
-      <button  onClick={createPaymentHandler} class="w-full btn btn_primary mt-0 mb-4">
+      <button  onClick={createPaymentHandler} class="w-full mb-4 py-3 text-white bg-[#417F56]  rounded-md text-lg">
       ثبت سفارش
       </button>
 

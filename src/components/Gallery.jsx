@@ -36,7 +36,7 @@ function Gallery() {
 
   return (
     <div>
-<Title className="my-8 md:px-14 px-4" title="گالری" />
+<Title className="my-8 text-center" title="گالری" />
       <div className=" grid md:grid-cols-4 md:grid-rows-2 gap-4 grid-cols-6 md:h-[400px] h-auto mb-16 px-10 ">
         <div
           className="animate-one md:row-span-2 md:col-auto  col-span-3 relative

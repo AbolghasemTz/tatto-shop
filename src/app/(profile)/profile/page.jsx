@@ -7,7 +7,7 @@ import { BsBox2Heart } from "react-icons/bs";
 import { toLocalDateStringShort } from "@/utils/toLocaleDate";
 function Profile() {
   const { data, isLoading } = useGetUser();
-  const { user } = data?.data || {};
+  const { user } = data || {};
   console.log(user, "user");
   if (isLoading) return <Loading />;
   return (

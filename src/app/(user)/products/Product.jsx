@@ -1,3 +1,4 @@
+
 import React from "react";
 import Image from "next/image";
 import { toPersianNumberWithComma } from "@/utils/toPersianNumber";
@@ -7,7 +8,7 @@ import Link from "next/link";
 function Product({ products }) {
   return (
     <>
-      {products.map((product) => {
+      {products?.map((product) => {
         return (
           <div key={product._id} className="rounded-md my-10 md:w-[30%] w-[80%] md:h-80">
             <div className="mb-3 bg-gray-100 rounded-xl p-2  w-fit h-auto">
