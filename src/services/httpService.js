@@ -35,7 +35,7 @@ app.interceptors.response.use(
 const http = {
   get: app.get,
   post: app.post,
-  delete: app.post,
+  delete: app.delete,
   put: app.put,
   patch: app.patch,
 };

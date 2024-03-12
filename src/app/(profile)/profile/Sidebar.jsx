@@ -17,7 +17,7 @@ const routSidebar = [
     href: "/profile/me",
     icon: <GrContactInfo size={20} />,
   },
-  { name: "سفارشات", href: "/profile/order", icon: <BsBox2Heart size={18} /> },
+  { name: "سفارشات", href: "/profile/payments", icon: <BsBox2Heart size={18} /> },
 ];
 function Sidebar() {
   const router = useRouter();
