@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
       >
          <Providers>
           <Toaster />
-          <div className="md:grid grid-cols-4 bg-white h-screen md:mt-[48px] mt-[28px] flex flex-col">
-         <div className="col-span-1   p-4 ">
+          <div className="  bg-white   flex ">
+         <div className="  p-4 ">
         <AdminSideBar />
          </div>
-          <div className="col-span-3  p-4">{children}</div>
+          <div className="flex-1   p-4 ">{children}</div>
           </div>
        </Providers>
       </body>

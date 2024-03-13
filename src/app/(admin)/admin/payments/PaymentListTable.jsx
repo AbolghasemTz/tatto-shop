@@ -3,17 +3,17 @@ import { adminPaymentListTableTHeads } from "@/constant/tableHeads";
 import { toLocalDateStringShort } from "@/utils/toLocaleDate";
 import { toPersianNumberWithComma } from "@/utils/toPersianNumber";
 import Link from "next/link";
-import { HiEye } from "react-icons/hi";
+import { GrView } from "react-icons/gr";
 
 function PaymentListTable({ payments }) {
   return (
-    <div className="shadow-sm overflow-auto my-8">
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
-        <thead>
+    <div className="overflow-x-auto mt-4">
+       <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
+        <thead className='bg-slate-200 '>
           <tr>
             {adminPaymentListTableTHeads.map((item) => {
               return (
-                <th className="whitespace-nowrap table__th" key={item.id}>
+                <th className="whitespace-nowrap text-center" key={item.id}>
                   {item.label}
                 </th>
               );
@@ -23,15 +23,15 @@ function PaymentListTable({ payments }) {
         <tbody>
           {payments.map((payment, index) => {
             return (
-              <tr key={payment._id}>
-                <td className="table__td">{index + 1}</td>
-                <td className="table__td  whitespace-nowrap truncate">
+              <tr key={payment._id} className='bg-white font-semibold'>
+                <td className="text-[12px] text-center'">{index + 1}</td>
+                <td className="text-center">
                   {payment.invoiceNumber}
                 </td>
-                <td className="table__td  max-w-[280px] whitespace-nowrap truncate">
+                <td className="text-center">
                   {payment.description}
                 </td>
-                <td className="table__td  whitespace-nowrap truncate">
+                <td className="text-center">
                   <div className="flex flex-col gap-y-2">
                     <span> {payment.user?.name}</span>
                     <span> {payment.user?.email}</span>
@@ -40,7 +40,7 @@ function PaymentListTable({ payments }) {
                     </span>
                   </div>
                 </td>
-                <td className="table__td">
+                <td className="text-center">
                   <div className="flex flex-col gap-y-2 items-start">
                     {payment.cart.productDetail.map((product) => {
                       return (
@@ -54,13 +54,13 @@ function PaymentListTable({ payments }) {
                     })}
                   </div>
                 </td>
-                <td className="table__td font-bold text-lg">
+                <td className="text-center font-bold text-lg">
                   {toPersianNumberWithComma(payment.amount)}
                 </td>
-                <td className="table__td">
+                <td className="text-center">
                   {toLocalDateStringShort(payment.createdAt)}
                 </td>
-                <td className="table__td">
+                <td className="text-center">
                   {payment.status === "COMPLETED" ? (
                     <span className="badge badge--success">موفق</span>
                   ) : (
@@ -73,7 +73,7 @@ function PaymentListTable({ payments }) {
                       href={`/admin/payments/${payment._id}`}
                       className="flex justify-center"
                     >
-                      <HiEye className="w-6 h-6 text-primary-900" />
+                        <GrView size={18}  color='#353535'/>
                     </Link>
                   </div>
                 </td>

@@ -23,13 +23,13 @@ function CategoryListTabel({categories}) {
  }
 }
   return (
-    <div className='shadow-sm overflow-auto my-8'>
-    <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
-      <thead>
+    <div className='overflow-auto mt-4 '>
+    <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
+    <thead className='bg-slate-200 '>
           <tr>
               {categoriesTabelTHead.map((item) => {
                   return (
-                      <th className="whitespace-nowrap" key={item.id}>
+                    <th key={item._id} className="whitespace-nowrap text-center key={item.id">
                           {item.label}
                       </th>
                   )
@@ -38,7 +38,7 @@ function CategoryListTabel({categories}) {
       </thead>
       <tbody>
         {categories.map((category,index) => {
-          return <tr  key={category._id}>
+          return <tr className='bg-white font-semibold'  key={category._id}>
                <td className='text-center pt-1'>{index}</td>
                <td className="truncate whitespace-nowrap text-center pt-1">{category.title}</td>
                

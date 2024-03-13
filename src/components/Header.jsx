@@ -33,7 +33,7 @@ function Header() {
   const { data, isLoading } = useGetUser();
   const { user } = data || {};
   const cartLength = user?.cart?.products?.length;
-  const pathname = usePathname();
+ 
 
   const toggleDropdown = () => {
     setIsOpenDropDown(!isOpenDropDown);

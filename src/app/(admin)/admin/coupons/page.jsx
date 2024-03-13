@@ -12,17 +12,17 @@ function page() {
   const { coupons } = data || {};
   if (isLoading) return <Loading />;
   return (
-    <div>
-      <div className="mb-5 flex items-center justify-between">
-        <h1 className="text-xl font-bold mb-5">کد های تخفیف</h1>
+    <div className='p-4 bg-slate-800 h-[calc(100vh-2rem)] rounded-xl '>
+        <div className="flex justify-between items-center">
+        <h1 className="text-xl font-bold mb-5 text-white">کد های تخفیف</h1>
         <Link
           href="/admin/coupons/add"
-          className="font-bold text-primary-900 flex items-center gap-x-2"
+          className="text-xl font-bold mb-5 text-white flex"
         >
-          <HiPlusCircle className="w-6 h-6" /> <span>اضافه کردن کد تحفیف</span>
+          <HiPlusCircle color="white" className="w-6 h-6 ml-2" /> <span>اضافه کردن کد تحفیف</span>
         </Link>
       </div>
-      <CouponListTable coupons={coupons} />
+      <CouponListTable  coupons={coupons} />
     </div>
   );
 }

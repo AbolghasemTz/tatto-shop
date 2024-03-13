@@ -6,15 +6,15 @@ import { userListTabelHeads } from '@/constant/tableHeads';
 import { toLocalDateStringShort } from '@/utils/toLocaleDate';
 
 function UserTabel({users}) {
-    console.log(users);
+   
   return (
-    <div className='shadow-sm overflow-auto my-8'>
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
-        <thead>
+    <div className='overflow-x-auto mt-4 '>
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
+        <thead className='bg-slate-200 '>
             <tr>
                 {userListTabelHeads.map((item) => {
                     return (
-                        <th className="whitespace-nowrap" key={item.id}>
+                        <th className="whitespace-nowrap text-center" key={item.id}>
                             {item.label}
                         </th>
                     )
@@ -23,9 +23,9 @@ function UserTabel({users}) {
         </thead>
         <tbody>
           {users?.map((user,index) => {
-            return <tr key={user._id}>
-                 <td className='text-center'>{index}</td>
-                 <td className="truncate whitespace-nowrap text-center">{user.name}</td>
+            return <tr key={user._id} className='bg-white font-semibold'>
+                 <td className='text-[12px] text-center'>{index}</td>
+                 <td className="text-center">{user.name}</td>
                  <td className='text-center'>{user.email}</td>
                  <td className='text-center'>{user.phoneNumber} {user.isVerifiedPhoneNumber && <h6 className='text-green-600'>verify</h6>}</td>
                  <td className='text-center'>{user.Products?.map((product,index) => {

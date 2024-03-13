@@ -13,9 +13,9 @@ function page() {
 
   if (isLoading) return <Loading/>;
   return (
-    <div>
+    <div className="p-4 bg-slate-800 w-full h-[calc(100vh-2rem)] rounded-xl">
       <div className="mb-5 flex items-center justify-between">
-        <h1 className="text-xl font-bold mb-5">سفارشات</h1>
+        <h1 className="text-white font-semibold  text-2xl">سفارشات</h1>
       </div>
       <PaymentListTable payments={payments} />
     </div>

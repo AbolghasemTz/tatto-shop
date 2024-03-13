@@ -24,13 +24,13 @@ try {
 }
   }
   return (
-    <div className='shadow-sm overflow-auto my-8'>
-    <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
-      <thead>
+    <div className='overflow-auto mt-4'>
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
+      <thead className='bg-slate-200 '>
           <tr>
               {productTabelTHead.map((item) => {
                   return (
-                      <th className="whitespace-nowrap" key={item.id}>
+                    <th className="whitespace-nowrap text-center" key={item.id}>
                           {item.label}
                       </th>
                   )
@@ -39,14 +39,14 @@ try {
       </thead>
       <tbody>
         {products.map((product,index) => {
-          return <tr key={product._id}>
+          return <tr key={product._id}  className='bg-white font-semibold'>
                <td className='text-center pt-1'>{toPersianNumbers(index)}</td>
-               <td className="truncate whitespace-nowrap text-center">{product.title}</td>
-               <td className='text-center pt-1'>{product.category?.title}</td>
-               <td className='text-center pt-1'>{toPersianNumberWithComma(product.price)}</td>
-               <td className='text-center pt-1'>{toPersianNumbers(product.discount)}%</td>
-               <td className='text-center pt-1'>{toPersianNumberWithComma(product.offPrice)}</td>
-               <td className='text-center pt-1'>{toPersianNumbers(product.countInStock)}</td>
+               <td className=" text-center">{product.title}</td>
+               <td className='text-center '>{product.category?.title}</td>
+               <td className='text-center '>{toPersianNumberWithComma(product.price)}</td>
+               <td className='text-center '>{toPersianNumbers(product.discount)}%</td>
+               <td className='text-center '>{toPersianNumberWithComma(product.offPrice)}</td>
+               <td className='text-center '>{toPersianNumbers(product.countInStock)}</td>
                
                <td className='flex items-center justify-center pt-1'>
                <Link className='font-semibold' href={`/admin/products/${product._id}`}>

@@ -11,7 +11,7 @@ import { RiEdit2Line } from "react-icons/ri";
 function CouponListTable({ coupons }) {
   const { mutateAsync } = useRemoveCoupon();
   const queryClient = useQueryClient();
-
+console.log(coupons);
   const removeCouponHandler = async (id) => {
     try {
       const { message } = await mutateAsync(id);
@@ -23,13 +23,13 @@ function CouponListTable({ coupons }) {
   };
 
   return (
-    <div className="shadow-sm overflow-auto my-8">
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
-        <thead>
+    <div className='overflow-auto mt-4'>
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
+      <thead className='bg-slate-200 '>
           <tr>
             {couponListTableTHeads.map((item) => {
               return (
-                <th className="whitespace-nowrap table__th" key={item.id}>
+                <th className="whitespace-nowrap text-center" key={item.id}>
                   {item.label}
                 </th>
               );
@@ -39,16 +39,16 @@ function CouponListTable({ coupons }) {
         <tbody>
           {coupons.map((coupon, index) => {
             return (
-              <tr key={coupon._id}>
-                <td className="table__td">{index + 1}</td>
-                <td className="table__td  whitespace-nowrap font-bold">
+              <tr key={coupon._id}  className='bg-white font-semibold'>
+                <td  className='text-center pt-1'>{index + 1}</td>
+                <td className="text-center  whitespace-nowrap font-bold">
                   {coupon.code}
                 </td>
-                <td className="table__td">
+                <td className="text-center">
                   <span className="badge badge--primary">{coupon.type}</span>
                 </td>
-                <td className="table__td">{coupon.amount}</td>
-                <td className="table__td">
+                <td className="text-center">{coupon.amount}</td>
+                <td className="flex justify-center">
                   <div className="space-y-2 flex flex-col items-start">
                     {coupon.productIds.map((p) => {
                       return (
@@ -59,12 +59,12 @@ function CouponListTable({ coupons }) {
                     })}
                   </div>
                 </td>
-                <td className="table__td">{coupon.usageCount}</td>
-                <td className="table__td">{coupon.usageLimit}</td>
-                <td className="table__td">
+                <td className="text-center">{coupon.usageCount}</td>
+                <td className="text-center">{coupon.usageLimit}</td>
+                <td className="text-center">
                   {toLocalDateStringShort(coupon.expireDate)}
                 </td>
-                <td className="table__td font-bold text-lg">
+                <td className="flex justify-center  font-bold text-lg">
                   <div className="flex items-center gap-x-4">
                     <Link href={`/admin/coupons/${coupon._id}`}>
                       <HiEye className="text-primary-900 w-6 h-6" />

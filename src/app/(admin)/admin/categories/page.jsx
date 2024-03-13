@@ -11,10 +11,10 @@ function page() {
 console.log(categories);
   if(isLoading) return <Loading />
   return (
-    <div>
-        <div className="flex justify-between items-center">
-      <h1 className="text-xl font-bold mb-5">دسته بتدی </h1>
-        <Link className="text-xl font-bold mb-5" href={`/admin/categories/add`}>اضافه کردن دسته بندی</Link>
+    <div className='p-4 bg-slate-800 w-full h-[calc(100vh-2rem)] rounded-x'>
+        <div className="l flex justify-between ">
+      <h1 className="text-white font-semibold  text-2xl">دسته بندی </h1>
+        <Link className="text-white font-semibold  text-2xl" href={`/admin/categories/add`}>اضافه کردن دسته بندی</Link>
 
         </div>
       <CategoryListTabel categories={categories}/>
