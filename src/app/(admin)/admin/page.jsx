@@ -7,7 +7,7 @@ import Loading from "@/common/Loading";
 function page() {
   const { data, isLoading } = useGetUser();
   const { user } = data || {};
-  console.log(user, "user");
+
   if (isLoading) return <Loading />;
   return (
     <div className="p-4 bg-slate-800 h-[calc(100vh-2rem)] rounded-xl">

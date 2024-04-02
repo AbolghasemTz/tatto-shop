@@ -43,7 +43,6 @@ function addProductPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  //   console.log(selectedCategory);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

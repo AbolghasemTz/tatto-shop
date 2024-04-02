@@ -10,7 +10,6 @@ function ProductsFilter({ categories }) {
   const [selectedCategories, setSelectedCategories] = useState(
     searchParams.get("category")?.split(",") || []
   );
-  // console.log(searchParams.getAll("category")[0].split(","));
 
   const createQueryString = useCallback(
     (name, value) => {

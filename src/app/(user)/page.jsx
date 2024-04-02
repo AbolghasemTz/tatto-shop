@@ -4,7 +4,6 @@ import Categories from "../../components/Categories";
 import Slider from "../../components/Slider";
 import TabProducts from "../../components/TabProducts";
 import "../globals.css";
-import VideoIntro from "@/components/VideoIntro";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <Categories />
       <TabProducts />
       <DeliveryHome />
-      <VideoIntro />
+  
     </main>
   );
 }

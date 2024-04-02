@@ -51,7 +51,7 @@ function DeliveryHome() {
         </div>
       <div className="md:col-span-2 col-span-4 text-white">
         <div className="w-full">
-          <Image className="rounded-md" src="/images/delevry.jpeg" width={800} height={300} alt="delevry" />
+          <Image loading="lazy" className="rounded-md" src="/images/delevry.jpeg" width={800} height={300} alt="delevry" />
         </div>
       </div>
     </div>

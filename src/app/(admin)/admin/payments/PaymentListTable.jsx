@@ -7,7 +7,7 @@ import { GrView } from "react-icons/gr";
 
 function PaymentListTable({ payments }) {
   return (
-    <div className="overflow-x-auto mt-4">
+    <div className="overflow-auto mt-4">
        <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
         <thead className='bg-slate-200 '>
           <tr>

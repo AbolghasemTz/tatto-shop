@@ -16,7 +16,7 @@ function CategoryForm({
   setSecetedType,
 })  
 {
-  console.log(category)
+  
 
   return (
     <form action="spacey-4" onSubmit={onSubmit}>

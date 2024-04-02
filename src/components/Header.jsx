@@ -19,7 +19,6 @@ import { loguot } from "@/services/AuthServices";
 const menus = [
   { name: "خانه", href: "/" },
   { name: "فروشگاه", href: "/products" },
-  { name: "درباره ما", href: "/about" },
   { name: "تماس با ما", href: "/contact" },
 ];
 
@@ -41,7 +40,7 @@ function Header() {
       );
     }
   };
-  const router = useRouter();
+
 
   const logOutHandler = async () => {
     await loguot();

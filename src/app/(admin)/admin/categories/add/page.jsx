@@ -14,7 +14,7 @@ function page() {
     englishTitle: "",
   });
   const [selectedType, setSecetedType] = useState("");
-  console.log(selectedType);
+ 
   const { isLoading, mutateAsync } = useAddCategory();
   const handleChange = (e) => {
     setCategory({ ...category, [e.target.name]: e.target.value });

@@ -16,6 +16,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { toPersianNumbers } from "../utils/toPersianNumber";
 import { useGetUser } from "../hooks/useAuth";
 import gsap from "gsap";
+import { loguot } from "@/services/AuthServices";
 
 function HeaderMobile({ isOpen, setIsOpen, menus }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -32,6 +33,10 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
         { duration: 0.5, y: 0, opacity: 1, ease: "power2.inOut" }
       );
     }
+  };
+  const logOutHandler = async () => {
+    await loguot();
+
   };
   return (
     <div className="md:hidden flex justify-between items-center h-full w-full px-5   login-dropdown">
@@ -86,7 +91,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
         {user ? (
           <div className="">
             <button
-             
+
               onClick={toggleDropdown}
               href="/#"
               id=""
@@ -127,7 +132,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
                         height={18}
                         alt="icon"
                       />
-                      <Link className="text-sm" href="">
+                      <Link className="text-sm" href="/profile/payments">
                         سفارشات
                       </Link>
                     </div>
@@ -139,9 +144,12 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
                         height={18}
                         alt="icon"
                       />
-                      <Link className="text-sm" href="">
-                        خروج
-                      </Link>
+                      <button
+                        className="text-sm "
+                        onClick={logOutHandler}
+                      >
+                        خروج{" "}
+                      </button>
                     </div>
                   </div>
                 </div>

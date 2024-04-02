@@ -4,7 +4,7 @@ import { toPersianNumberWithComma } from "@/utils/toPersianNumber";
 import ProductDetailsCarousel from "./ProductDetailsCarousel";
 
 function ContentInfo({ product }) {
-console.log(product);
+
   return (
     <div className="w-full md:py-20 py-10  z-[20] ">
       <div className="w-full  px-5 md:px-10 mx-auto ">

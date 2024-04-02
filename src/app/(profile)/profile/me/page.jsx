@@ -18,7 +18,6 @@ function Me() {
     phoneNumber: user?.phoneNumber || "",
     biography: user?.biography || "",
   });
-console.log(formData);
   const handlerForm = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

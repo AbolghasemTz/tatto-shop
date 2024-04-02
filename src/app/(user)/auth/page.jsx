@@ -46,7 +46,7 @@ function AuthPage({ onClose }) {
     try {
       const data = await mutateSendOtp({ phoneNumber });
       toast.success(data?.message);
-      // console.log(data?.message,"send");
+      
 
       setStep(2);
       setTime(RESEND_TIME);
@@ -59,7 +59,7 @@ function AuthPage({ onClose }) {
     e.preventDefault();
     try {
       const data = await mutateCheckOtp({ phoneNumber, otp });
-      // console.log(data,"check");
+      
       toast.success("کد تایید شد !خوش آمدید");
       if (data?.user?.isActive) {
         onClose();
@@ -75,15 +75,14 @@ function AuthPage({ onClose }) {
   const CheckProfileHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await mutateCheckProfile({ name, email });
+      const  data  = await mutateCheckProfile({ name, email });
       toast.success(data?.message);
-      console.log(data?.message);
+    
       router.push("/");
       queryClient.invalidateQueries(["get-user"])
       onClose();
     } catch (error) {
       toast.error(error?.response?.data?.message);
-      console.log(error?.response?.data?.message);
     }
   };
   useEffect(() => {

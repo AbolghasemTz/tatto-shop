@@ -11,7 +11,7 @@ import { RiEdit2Line } from "react-icons/ri";
 function CouponListTable({ coupons }) {
   const { mutateAsync } = useRemoveCoupon();
   const queryClient = useQueryClient();
-console.log(coupons);
+
   const removeCouponHandler = async (id) => {
     try {
       const { message } = await mutateAsync(id);

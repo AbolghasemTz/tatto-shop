@@ -22,7 +22,6 @@ useEffect(() => {
     setFormData(includeObj(category, includesCategoryKey));
   }
 }, [data]);
-console.log(formData,"taziki");
    const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useGetCategories } from "@/hooks/useCategories";
 import Title from "@/common/Title";
 
+
 function Categories() {
   const { isLoading, data } = useGetCategories();
   const { categories } = data || {};
   const selectedCategories = categories?.slice(0, 3);
-
   return (
     <div>
       <Title className="my-10 text-center" title="دسته بندی ها" />

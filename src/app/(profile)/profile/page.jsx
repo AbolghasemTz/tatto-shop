@@ -8,7 +8,7 @@ import { toLocalDateStringShort } from "@/utils/toLocaleDate";
 function Profile() {
   const { data, isLoading } = useGetUser();
   const { user } = data || {};
-  console.log(user, "user");
+
   if (isLoading) return <Loading />;
   return (
     <div className="p-4 ">
