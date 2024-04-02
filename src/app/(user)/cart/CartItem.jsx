@@ -42,7 +42,7 @@ function CartItem({ cartItem }) {
       <div className="w-16 md:w-24 h-auto rounded-md">
         <Image
           className="w-full h-auto  rounded-md"
-          src="/images/g-4.jpg"
+          src={cartItem.imageLink}
           alt="product"
           width={200}
           height={200}

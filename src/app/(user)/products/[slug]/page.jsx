@@ -11,7 +11,7 @@ async function page({ params }) {
   const { product } = await getOneProductsBySlug(slug);
 
   return (
-    <div className="z-[20] min-h-screen">
+    <div className="z-[20] min-h-screen bg-gray-50">
       <ContentInfo product={product} />
 
       {/* sticky bottom in mobile */}

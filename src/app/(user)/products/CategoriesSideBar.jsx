@@ -37,7 +37,7 @@ function CategoriesSideBar({ categories }) {
                       />
                     </svg>
 
-                    <span className="mr-3">برند محصول</span>
+                    <span className="mr-3">دسته بندی محصول</span>
                   </div>
                   <div className="">
                    <IoIosArrowDown size={19}/>

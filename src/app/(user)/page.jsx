@@ -1,22 +1,19 @@
-import TabProducts from "@/components/TabProducts";
+import DeliveryHome from "@/components/DeliveryHome";
 import Categories from "../../components/Categories";
-import CountNumber from "../../components/CountNumber";
-import Gallery from "../../components/Gallery";
+
 import Slider from "../../components/Slider";
-import TestimonialSlider from "../../components/TestimonialSlider";
+import TabProducts from "../../components/TabProducts";
 import "../globals.css";
+import VideoIntro from "@/components/VideoIntro";
 
 export default function Home() {
   return (
-   <main className="">
-    <Slider />
-    <Categories />
-    <CountNumber />
-    {/* <Gallery /> */}
-    <TabProducts />
-    <TestimonialSlider />
- 
-    
-   </main>
+    <main className="">
+      <Slider />
+      <Categories />
+      <TabProducts />
+      <DeliveryHome />
+      <VideoIntro />
+    </main>
   );
 }

@@ -34,7 +34,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
     }
   };
   return (
-    <div className="md:hidden flex justify-between items-center h-full w-full px-5  z-[99]">
+    <div className="md:hidden flex justify-between items-center h-full w-full px-5   login-dropdown">
       <div className="">
         <button onClick={() => setIsOpen(true)}>
           <FaBarsStaggered size={24} className="text-white cursor-pointer" />
@@ -55,7 +55,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
                 </Link>
               </li>
             ))}
-            <div className="flex justify-center  items-center gap-8  mt-8 text-white z-[99]">
+            <div className="flex justify-center  items-center gap-8  mt-8 text-white  login-dropdown">
               <div>
                 <FaFacebookF
                   className="text-white cursor-pointer hover:opacity-80 transition-opacity duration-300 ease-in-out"
@@ -96,9 +96,9 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
               <MdKeyboardArrowDown className="text-white" size={20} />
             </button>
 
-            <div id="dropdown-content" className="absolute top-20 md:left-10 left-5 bg-white w-56  mx-auto  rounded-md shadow-lg  z-[99]">
+            <div id="dropdown-content" className="absolute top-20 md:left-10 left-5 bg-white w-56  mx-auto  rounded-md shadow-lg   login-dropdown">
               {isOpenDropDown && (
-                <div className="p-4  z-[99]">
+                <div className="p-4   login-dropdown">
                   <div className="border-b border-gray-300 ">
                     <p className="">امید تازیکی</p>
                     <p className="py-2 text-sm">
@@ -106,7 +106,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
                     </p>
                   </div>
 
-                  <div className="flex flex-col justify-center z-[99]  pt-4">
+                  <div className="flex flex-col justify-center  login-dropdown  pt-4">
                     <div className="flex items-center  hover:bg-gray-100 py-2  rounded-md ">
                       <Image
                         className="ml-2 cursor-pointer"
@@ -151,7 +151,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
         ) : (
           <div
             onClick={() => setIsOpenModal(true)}
-            className="flex border-2 border-white p-1  z-[99] rounded-lg overflow-hidden cursor-pointer"
+            className="flex border-2 border-white p-1   login-dropdown rounded-lg overflow-hidden cursor-pointer"
           >
             <CiLogin className="text-white rotate-180 ml-3" size={24} />
             <span className="text-white text-sm">ورود</span>

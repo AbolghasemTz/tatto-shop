@@ -34,9 +34,9 @@ function AddToCart({ product }) {
   return (
     <div className="flex-auto text-sm text-center pb-6">
       {inCart(user, product) ? (
-        <Link className="btn btn_primary w-[90%] mx-auto text-center inline-block" href="/cart">ادمه سفارش</Link>
+        <Link className="btn btn_primary w-[90%] text-xs mx-auto text-center inline-block bg-[#1B6DC4]" href="/cart">ادمه سفارش</Link>
       ) : (
-        <button onClick={addToCartHandler} className="btn btn_primary w-[90%] mx-auto text-center">
+        <button onClick={addToCartHandler} className="btn btn_primary w-[90%] mx-auto text-center text-xs bg-[#1B6DC4]">
           اضافه کردن به سبد خرید
         </button>
       )}

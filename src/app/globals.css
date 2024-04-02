@@ -8,7 +8,9 @@ body {
   margin: 0;
   font-family: var(--font-estedad);
   min-height: 100vh;
-  user-select: none;
+  /* user-select: none; */
+  background: url(../../public/images/stars-bg.png);
+  box-sizing: border-box;
 }
 
 @layer components {
@@ -87,3 +89,54 @@ table td {
 }
 
 /*  react tag input */
+
+
+.login-dropdown {
+  z-index: 9999;
+  /* یک مقدار بسیار بزرگ برای اطمینان حاصل کردن از بالاترین لایه */
+}
+
+.slideZ {
+  z-index: 0;
+  /* یک مقدار بسیار بزرگ برای اطمینان حاصل کردن از بالاترین لایه */
+}
+
+.image{
+
+  animation: float 4s ease-in-out infinite;
+}
+.card-1{
+  background: linear-gradient(to right,
+  #545d60 , #283048
+  );
+}
+.card-2{
+  background: linear-gradient(to right,
+  #4b485a , #1f1c2c
+  );
+}
+.card-3{
+  background: linear-gradient(to right,
+  #3f4c6b , #535e79
+  );
+}
+
+.card:hover{
+  background: linear-gradient(to left,
+  #3a7bd5, #00d0ff
+  );
+ 
+}
+
+@keyframes float {
+  0%{
+      transform: translateY(0);
+  }
+  50%{
+      transform: translateY(-15px);
+  }
+  100%{
+      transform: translateY(0px);
+  }
+  
+}

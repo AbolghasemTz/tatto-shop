@@ -11,13 +11,13 @@ import { toPersianNumbers } from "../utils/toPersianNumber";
 
 function Footer() {
   return (
-    <footer className="bg-[#111111] pb-4 px-9">
+    <footer className=" pb-4 px-9">
       {/* top footer */}
       <div className="grid grid-cols-12 md:gap-x-8 gay-y-6 py-8 ">
         <div className="md:col-span-4  col-span-12 text-white">
           <h3 className="font-bold text-2xl tracking-wider">فروشگاه  سارا تتو</h3>
           <p className="md:text-base text-sm py-8">
-            مهم ترین هدف ما در فروشگاه  امید، جلب و حفظ رضایت شما دوستانی
+            مهم ترین هدف ما در فروشگاه  <span className="bg-[#1B6DC4] px-1 transform transition-transform duration-150 ease-in-out hover:skew-x-12 hover:scale-[1.5] cursor-pointer inline-block rounded-sm">سارا تـتـو</span>, جلب و حفظ رضایت شما دوستانی
             است که سرمایه های ارزشمند این فروشگاه محسوب می شوید. در برابر قیمت
             های متغیر و گاه غیرمنصفانه بازار، ما در کنار شما هستیم و همواره در
             تلاشیم تا کالاهای با کیفیت را با گارانتی معتبر و به نازل ترین قیمت
@@ -30,7 +30,7 @@ function Footer() {
                 {toPersianNumbers("09960026303")}
               </p>
             </div>
-            <div className="p-3 bg-[#065f46] rounded-sm">
+            <div className="p-3 bg-[#1B6DC4] rounded-sm">
               <BsTelephone className="text-2xl" />
             </div>
           </div>
@@ -41,16 +41,16 @@ function Footer() {
             لینک های مفید
           </h3>
           <ul className="py-8  ">
-            <li className="hover:text-[#065f46] duration-200 ease-out cursor-pointer">
+            <li className="hover:text-[#1B6DC4] duration-200 ease-out cursor-pointer">
               صفحه محصولات
             </li>
-            <li className="hover:text-[#065f46] duration-200 ease-out pt-4 cursor-pointer">
+            <li className="hover:text-[#1B6DC4] duration-200 ease-out pt-4 cursor-pointer">
               قوانین و مقررات
             </li>
-            <li className="hover:text-[#065f46] duration-200 ease-out pt-4 cursor-pointer">
+            <li className="hover:text-[#1B6DC4] duration-200 ease-out pt-4 cursor-pointer">
               درباره ما
             </li>
-            <li className="hover:text-[#065f46] duration-200 ease-out pt-4 cursor-pointer">
+            <li className="hover:text-[#1B6DC4] duration-200 ease-out pt-4 cursor-pointer">
               تماس با ما
             </li>
           </ul>
@@ -100,21 +100,21 @@ function Footer() {
       <div className="grid grid-cols-12 md:gap-x-8 gay-y-6 border-t pt-4">
         <div className="md:col-span-6 col-span-12 text-white ">
           <div className="flex md:justify-start justify-center md:mt-0 mt-3">
-            <h3 className="text-2xl mt-2 md:mr-3">
-              ساخته شده توسط تیم امید
+            <h3 className="md:text-xl text-base md:mt-2 md:mr-3">
+            © کپی رایت 2022. تمامی حقوق محفوظ است
             </h3>
           </div>
         </div>
         <div className="md:col-span-6 col-span-12 text-white ">
           <ul className="flex md:justify-end justify-center items-center gap-x-8">
             <li className="p-4">
-              <BsInstagram className="text-2xl cursor-pointer hover:text-[#065f46] duration-200" />
+              <BsInstagram className="text-2xl cursor-pointer hover:text-[#1B6DC4] duration-200" />
             </li>
             <li className="p-4">
-              <BsFacebook className="text-2xl cursor-pointer hover:text-[#065f46] duration-200" />
+              <BsFacebook className="text-2xl cursor-pointer hover:text-[#1B6DC4] duration-200" />
             </li>
             <li className="p-4">
-              <BsWhatsapp className="text-2xl cursor-pointer hover:text-[#065f46] duration-200" />
+              <BsWhatsapp className="text-2xl cursor-pointer hover:text-[#1B6DC4] duration-200" />
             </li>
           </ul>
         </div>

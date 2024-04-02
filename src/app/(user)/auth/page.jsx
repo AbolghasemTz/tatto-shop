@@ -45,7 +45,8 @@ function AuthPage({ onClose }) {
     e.preventDefault();
     try {
       const data = await mutateSendOtp({ phoneNumber });
-      toast.success(data?.data?.message);
+      toast.success(data?.message);
+      // console.log(data?.message,"send");
 
       setStep(2);
       setTime(RESEND_TIME);
@@ -57,7 +58,8 @@ function AuthPage({ onClose }) {
   const checkOtpHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await mutateCheckOtp({ phoneNumber, otp });
+      const data = await mutateCheckOtp({ phoneNumber, otp });
+      // console.log(data,"check");
       toast.success("کد تایید شد !خوش آمدید");
       if (data?.user?.isActive) {
         onClose();

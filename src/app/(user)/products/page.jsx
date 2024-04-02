@@ -30,7 +30,7 @@ async function Menu({ searchParams }) {
         
         
       </div>
-        <div className=" md:col-span-3 col-span-4  flex justify-around  my-4  flex-wrap ">
+        <div className=" md:col-span-3 col-span-4 flex justify-around flex-wrap ">
         <Product products={products} />
       </div>
     </div>

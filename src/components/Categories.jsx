@@ -1,33 +1,38 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { useGetCategories } from "@/hooks/useCategories";
 import Title from "@/common/Title";
 
 function Categories() {
   const { isLoading, data } = useGetCategories();
   const { categories } = data || {};
+  const selectedCategories = categories?.slice(0, 3);
 
- 
   return (
-    <div id="animate-caegory" >
-     <Title className="my-8 text-center " title="دسته بندی ها" />
-      <div id="category_scroll"  className="grid grid-cols-6 gap-4 md:px-12 px-4">
-        {categories?.map((category) => (
+    <div>
+      <Title className="my-10 text-center" title="دسته بندی ها" />
+      <div className="grid grid-cols-6 gap-4 md:px-12 px-4">
+        {selectedCategories?.map((category) => (
           <div
-         
             key={category._id}
-            className="mb-8 md:col-span-2 col-span-6 bg-[#F2F6F7] w-full  rounded-md shadow-md text-black "
+            className="mb-8 md:col-span-2 col-span-6 rounded-md p-4 cursor-pointer transition-all duration-150 ease-in-out card-1 card"
           >
-            <Link
-              className="flex flex-row-reverse justify-around items-center "
-              href={`products?category=${category?.englishTitle}`}
-            >
-              <h2 className="text-xl font-semibold">{category?.title}</h2>
-              <div className="w-[150px] ">
-                <Image src="/images/cat.png" width={200} height={200} alt="" />
+            <Link href={`/products?category=${category.englishTitle}`}>
+              <div className="rotate-center flex justify-center">
+                <Image
+                  src="/images/cat.png"
+                  alt=""
+                  width={150}
+                  height={150}
+                  className="max-w-[200px] max-h-[200px] w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-row-reverse justify-around items-center">
+                <h2 className="text-xl font-semibold text-white shadow-md">
+                  {category.title}
+                </h2>
               </div>
             </Link>
           </div>

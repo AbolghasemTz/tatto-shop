@@ -12,9 +12,9 @@ function page() {
   if (isLoading) return <Loading />;
   if (!user || !data)
     return (
-      <div className="container lg:max-w-screen-lg">
+      <div className="container lg:max-w-screen-lg text-white">
         <p className="font-bold mb-4">برای مشاهده سبد خرید لطفا اقدام کنید</p>
-        <Link href="/auth" className="text-lg font-bold text-primary-900">
+        <Link href="/auth" className="text-lg font-bold text-white">
           رفتن به صفحه لاگین؟
         </Link>
       </div>
@@ -22,9 +22,9 @@ function page() {
 
   if (!user.cart?.products || user.cart?.products.length === 0)
     return (
-      <div className="h-screen text-center">
+      <div className="h-screen text-center  text-white">
         <p className="my-8">سبد خرید خالی است</p>
-        <Link href="/products" className="text-lg font-bold text-green-900">
+        <Link href="/products" className="text-lg font-bold ">
           رفتن به صفحه محصولات
         </Link>
       </div>
