@@ -13,24 +13,24 @@ function Product({ products }) {
         return (
           <>
             {isLoading ? (
-              <div class="rounded-md flex-[1_1_300px] m-[10px] p-[15px] text-center border-[1px] border-[solid] border-[#e3e3e3] animate-pulse my-12">
-                <div class="mb-3 bg-gray-100 rounded-xl p-2 max-w-full h-auto">
-                  <div class="h-64 bg-gray-300 rounded-md"></div>
+              <div className="rounded-md flex-[1_1_300px] m-[10px] p-[15px] text-center border-[1px] border-[solid] border-[#e3e3e3] animate-pulse my-12">
+                <div className="mb-3 bg-gray-100 rounded-xl p-2 max-w-full h-auto">
+                  <div className="h-64 bg-gray-300 rounded-md"></div>
                 </div>
-                <div class="flex items-center justify-between w-full mb-3">
-                  <div class="h-4 bg-gray-300 rounded w-1/4"></div>
+                <div className="flex items-center justify-between w-full mb-3">
+                  <div className="h-4 bg-gray-300 rounded w-1/4"></div>
                 </div>
-                <div class="flex justify-between items-center mb-3">
-                  <div class="h-4 bg-gray-300 rounded w-1/2"></div>
-                  <div class="h-4 bg-gray-300 rounded w-1/4"></div>
+                <div className="flex justify-between items-center mb-3">
+                  <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+                  <div className="h-4 bg-gray-300 rounded w-1/4"></div>
                 </div>
-                <div class="font-medium text-center text-sm mb-2 sm:text-base">
-                  <div class="h-4 bg-gray-300 rounded w-3/4 mb-1"></div>
-                  <div class="h-4 bg-gray-300 rounded w-1/2"></div>
+                <div className="font-medium text-center text-sm mb-2 sm:text-base">
+                  <div className="h-4 bg-gray-300 rounded w-3/4 mb-1"></div>
+                  <div className="h-4 bg-gray-300 rounded w-1/2"></div>
                 </div>
                 <hr />
-                <div class="flex justify-center items-center">
-                  <div class="h-10 bg-gray-300 rounded w-full"></div>
+                <div className="flex justify-center items-center">
+                  <div className="h-10 bg-gray-300 rounded w-full"></div>
                 </div>
               </div>
             ) : (

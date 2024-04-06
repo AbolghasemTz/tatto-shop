@@ -41,13 +41,11 @@ function PaymentTabel({ payments }) {
                 </td>
                 <td className=" text-[12px] ">
                   {toLocalDateStringShort(pay.createdAt)}
-                  
+
                 </td>
-               <div className={`text-xs rounded-md text-white  mt-4  ${pay.status === "COMPLETED" ? "bg-green-400" : "bg-red-400"}`}>
-               <td className="h-5 flex justify-center items-center">
+                <td className={`h-5 flex justify-center items-center my-2  ${pay.status === "COMPLETED" ? "bg-green-400" : "bg-red-400"}`}>
                   {pay.status === "COMPLETED" ? "موفق" : "ناموفق"}
                 </td>
-               </div>
               </tr>
             );
           })}
