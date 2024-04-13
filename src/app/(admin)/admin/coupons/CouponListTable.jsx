@@ -1,4 +1,4 @@
-
+import React from "react";
 import { couponListTableTHeads } from "@/constant/tableHeads";
 import { useRemoveCoupon } from "@/hooks/useCoupons";
 import { toLocalDateStringShort } from "@/utils/toLocaleDate";
@@ -25,11 +25,11 @@ function CouponListTable({ coupons }) {
   return (
     <div className='overflow-auto mt-4'>
       <table className="border-collapse table-auto w-full min-w-[800px] text-sm mb-2 rounded-md">
-      <thead className='bg-slate-200 '>
+        <thead className='bg-slate-200 '>
           <tr>
             {couponListTableTHeads.map((item) => {
               return (
-                <th className="whitespace-nowrap text-center" key={item.id}>
+                <th key={item.id} className="whitespace-nowrap text-center">
                   {item.label}
                 </th>
               );
@@ -39,9 +39,9 @@ function CouponListTable({ coupons }) {
         <tbody>
           {coupons.map((coupon, index) => {
             return (
-              <tr key={coupon._id}  className='bg-white font-semibold'>
-                <td  className='text-center pt-1'>{index + 1}</td>
-                <td className="text-center  whitespace-nowrap font-bold">
+              <tr key={coupon._id} className='bg-white font-semibold'>
+                <td className='text-center pt-1'>{index + 1}</td>
+                <td className="text-center whitespace-nowrap font-bold">
                   {coupon.code}
                 </td>
                 <td className="text-center">
@@ -50,13 +50,11 @@ function CouponListTable({ coupons }) {
                 <td className="text-center">{coupon.amount}</td>
                 <td className="flex justify-center">
                   <div className="space-y-2 flex flex-col items-start">
-                    {coupon.productIds.map((p) => {
-                      return (
-                        <span className="badge badge--secondary">
-                          {p.title}
-                        </span>
-                      );
-                    })}
+                    {coupon.productIds.map((p) => (
+                      <span key={p._id} className="badge badge--secondary">
+                        {p.title}
+                      </span>
+                    ))}
                   </div>
                 </td>
                 <td className="text-center">{coupon.usageCount}</td>
@@ -64,7 +62,7 @@ function CouponListTable({ coupons }) {
                 <td className="text-center">
                   {toLocalDateStringShort(coupon.expireDate)}
                 </td>
-                <td className="flex justify-center  font-bold text-lg">
+                <td className="flex justify-center font-bold text-lg">
                   <div className="flex items-center gap-x-4">
                     <Link href={`/admin/coupons/${coupon._id}`}>
                       <HiEye className="text-primary-900 w-6 h-6" />
@@ -85,4 +83,5 @@ function CouponListTable({ coupons }) {
     </div>
   );
 }
+
 export default CouponListTable;

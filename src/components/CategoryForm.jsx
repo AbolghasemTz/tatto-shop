@@ -25,6 +25,7 @@ function CategoryForm({
         label="عنوان"
         value={category?.title || ""}
         onChange={handleChange}
+        
       />
       <TextField
         name="englishTitle"

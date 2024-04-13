@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { toast } from 'react-hot-toast';
 import { useGetCategoryById, useUpdateCategory } from '@/hooks/useCategories';
 import CategoryForm, { categoryType } from '@/components/CategoryForm';
+import { includeObj } from '@/utils/objectUtils';
 
 const includesCategoryKey = ["title","englishTitle", "description"]
 function page() {
@@ -56,6 +57,7 @@ useEffect(() => {
           category={formData}
           selectedType={categoryType.find((c) => c.value ===  category?.type)}
           setSecetedType={setSecetedType}
+          
         />
       </div>
     </div>

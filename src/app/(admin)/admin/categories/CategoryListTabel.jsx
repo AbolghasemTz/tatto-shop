@@ -28,8 +28,9 @@ function CategoryListTabel({categories}) {
     <thead className='bg-slate-200 '>
           <tr>
               {categoriesTabelTHead.map((item) => {
+                
                   return (
-                    <th key={item._id} className="whitespace-nowrap text-center key={item.id">
+                    <th key={item.id} className="whitespace-nowrap text-center key={item.id">
                           {item.label}
                       </th>
                   )

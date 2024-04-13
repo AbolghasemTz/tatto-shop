@@ -1,9 +1,7 @@
-import React from "react";
+import React, { Suspense } from "react";
 import queryString from "query-string";
 import CategoriesSideBar from "./CategoriesSideBar";
-
 import FiltersMobile from "./FiltersMobile";
-
 import { getProducts } from "@/services/ProductServices";
 import { getCategories } from "@/services/categoriesService";
 import Product from "./Product";
@@ -15,26 +13,29 @@ async function Menu({ searchParams }) {
   const { categories } = await getCategories();
 
   return (
-    <div className="grid grid-cols-4 gap-4 min-h-screen  bg-gray-50 ">
-      <div className="md:hidden block  col-span-4 -mb-16">
+    <div className="grid grid-cols-4 gap-4 min-h-screen bg-gray-50">
+      <div className="md:hidden block col-span-4 -mb-16">
         <FiltersMobile categories={categories} />
       </div>
-
-      {/* sidebar */}
-
       
-        <div className="md:col-span-1 md:block hidden  mb-6 mt-14 rounded-md px-6  bg-[#F2F6F7]">
-          <CategoriesSideBar categories={categories} />
-          
-         
-        
-        
+      {/* sidebar */}
+      <div className="md:col-span-1 md:block hidden mb-6 mt-14 rounded-md px-6 bg-[#F2F6F7]">
+        <CategoriesSideBar categories={categories} />
       </div>
-        <div className=" md:col-span-3 col-span-4 flex justify-around flex-wrap ">
+      
+      <div className="md:col-span-3 col-span-4 flex justify-around flex-wrap">
         <Product products={products} />
       </div>
     </div>
   );
 }
 
-export default Menu;
+function MenuWithSuspense(props) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Menu {...props} />
+    </Suspense>
+  );
+}
+
+export default MenuWithSuspense;

@@ -13,7 +13,7 @@ function RadioGroup({ label, id, name, value, onChange, checked }) {
           onChange={onChange}
           className="form-radio rounded text-[#417F56]  focus:ring-[#417F56]"
         />
-        <span class="mr-3">{label}</span>
+        <span className="mr-3">{label}</span>
       </label>
     </div>
   );
