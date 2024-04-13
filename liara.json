@@ -1,0 +1,7 @@
+{
+    "platform": "next",
+    "app": "sara-tattoo",
+    "next": {
+      "modifyConfig": false
+    }
+  }
