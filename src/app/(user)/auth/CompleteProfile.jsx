@@ -33,7 +33,7 @@ function CompleteProfile({
           <Loading />
         ) : (
           <button
-            className="w-full btn btn_primary"
+            className=""
             type="submit"
             onClick={onSubmit}
           >

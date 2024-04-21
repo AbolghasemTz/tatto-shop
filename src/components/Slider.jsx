@@ -8,7 +8,7 @@ import "../app/globals.css";
 function Slider() {
 
   return (
-    <div className=" h-[calc(100vh-6rem)]  flex justify-center  items-center z-10">
+    <div className=" h-[calc(100vh-7rem)]  flex justify-center  items-center z-10">
       <div className="flex md:flex-row flex-col-reverse justify-around items-center   w-full ">
         <div className="md:w-[40%] w-[90%] text-[#b8b6b6]">
           <div className="text-3xl font-bold title">

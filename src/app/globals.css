@@ -23,7 +23,7 @@ body {
   }
 
   .btn_primary {
-    @apply mt-8 font-bold rounded-xl transition-all duration-300 px-4 py-3 bg-black text-white hover:opacity-80 shadow-lg shadow-primary-300
+    @apply mt-8 font-bold rounded-xl transition-all duration-300 px-4 py-3 bg-[#1B6DC4] text-white hover:opacity-80 shadow-lg shadow-primary-300
   }
 }
 

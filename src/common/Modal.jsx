@@ -20,7 +20,7 @@ function Modal({ open, onClose, title, children }) {
         >
           <div className="flex items-center justify-between border-b border-b-secondary-300 pb-2 mb-6">
             <p className="text-secondary-700 font-bold text-base">{title}</p>
-            <button onClick={onClose}>
+            <button onClick={onClose} className="">
               <HiOutlineX className="w-5 h-5 text-secondary-500" />
             </button>
           </div>
