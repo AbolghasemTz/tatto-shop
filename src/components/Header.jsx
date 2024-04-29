@@ -14,7 +14,6 @@ import AuthPage from "../app/(user)/auth/page";
 import Modal from "../common/Modal";
 
 import { useGetUser } from "../hooks/useAuth";
-import { useRouter } from "next/navigation";
 import { loguot } from "@/services/AuthServices";
 const menus = [
   { name: "خانه", href: "/" },

@@ -15,7 +15,7 @@ function page() {
       <div className="container  h-[calc(100vh-9rem)] lg:max-w-screen-lg text-white mt-8">
         <p className="font-bold mb-4">برای مشاهده سبد خرید لطفا ثبت نام کنید</p>
         <Link href="/" className="text-lg font-bold text-white">
-          رفتن به صفحه لاگین؟
+          لطفا وارد شوید!
         </Link>
       </div>
     );

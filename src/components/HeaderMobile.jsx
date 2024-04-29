@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CiLogin } from "react-icons/ci";
+import { CiLogin, CiShoppingBasket } from "react-icons/ci";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -24,6 +24,8 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
 
   const { data } = useGetUser();
   const { user } = data || {};
+
+  const cartLength = user?.cart?.products?.length;
   const toggleDropdown = () => {
     setIsOpenDropDown(!isOpenDropDown);
     if (!isOpenDropDown) {
@@ -39,7 +41,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
 
   };
   return (
-    <div className="md:hidden flex justify-between items-center h-full w-full px-5   login-dropdown">
+    <div className="md:hidden flex justify-between items-center  px-5 w-full h-[10vh] login-dropdown">
       <div className="">
         <button onClick={() => setIsOpen(true)}>
           <FaBarsStaggered size={24} className="text-white cursor-pointer" />
@@ -85,7 +87,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
       </div>
 
       <div className="">
-        <Image src="/images/logo.png" width={144} height={76} alt="logo" />
+        <Image src="/images/logo.png" width={90} height={46} alt="logo" />
       </div>
       <div className="flex justify-center items-center ">
         {user ? (
@@ -97,17 +99,17 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
               id=""
               className="login flex border-2 shadow-sm border-white p-1 rounded-lg overflow-hidden cursor-pointer"
             >
-              <FaUser className="text-white  ml-3" size={18} />
-              <MdKeyboardArrowDown className="text-white" size={20} />
+              <FaUser className="text-white  ml-3" size={14} />
+              <MdKeyboardArrowDown className="text-white" size={16} />
             </button>
 
             <div id="dropdown-content" className="absolute top-20 md:left-10 left-5 bg-white w-56  mx-auto  rounded-md shadow-lg   login-dropdown">
               {isOpenDropDown && (
                 <div className="p-4   login-dropdown">
                   <div className="border-b border-gray-300 ">
-                    <p className="">امید تازیکی</p>
+                  <p className="">{user?.name}</p>
                     <p className="py-2 text-sm">
-                      {toPersianNumbers("09354947002")}
+                    {toPersianNumbers(user?.phoneNumber)}
                     </p>
                   </div>
 
@@ -161,8 +163,8 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
             onClick={() => setIsOpenModal(true)}
             className="flex border-2 border-white p-1   login-dropdown rounded-lg overflow-hidden cursor-pointer"
           >
-            <CiLogin className="text-white rotate-180 ml-3" size={24} />
-            <span className="text-white text-sm">ورود</span>
+            <CiLogin className="text-white rotate-180 ml-3" size={20} />
+            <span className="text-white text-[12px]">ورود</span>
             <Modal
               open={isOpenModal}
               onClose={() => setIsOpenModal(false)}
@@ -172,6 +174,19 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
             </Modal>
           </div>
         )}
+          <div className="">
+              <div className="login relative ">
+                <Link href="/cart">
+                  <CiShoppingBasket
+                    size={25}
+                    className="text-white mr-5 cursor-pointer"
+                  />
+                </Link>
+                <span className="absolute -top-2 right-8 bg-white w-4 h-4 text-[12px] text-red-500 rounded-full flex justify-center items-center">
+                  {cartLength ? cartLength : 0}
+                </span>
+              </div>
+            </div>
       </div>
     </div>
   );

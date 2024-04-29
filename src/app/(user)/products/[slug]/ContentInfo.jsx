@@ -27,8 +27,9 @@ function ContentInfo({ product }) {
               <p>{product?.description}</p>
             </div>
             <div className="flex justify-start items-center ">
-              {product.tags.map((tag) => (
-                <p className="border border-gray-500 mx-2 p-1  rounded-md">{tag}</p>
+              {product.tags.map((tag,index) => (
+                
+                <p key={index} className="border border-gray-500 mx-2 p-1  rounded-md"> {tag}</p>
               ))}
             </div>
             <AddToCart product={product}/>

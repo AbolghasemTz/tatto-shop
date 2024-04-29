@@ -2,7 +2,6 @@
   "name": "tatto-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://sara-tattoo.ir",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +15,7 @@
     "antd": "^5.14.1",
     "axios": "^1.6.8",
     "gsap": "^3.12.5",
-    "next": "14.1.0",
+    "next": "14.0.0",
     "query-string": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

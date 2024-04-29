@@ -39,7 +39,7 @@ function CheckOtpForm({
           numInputs={6}
           renderSeparator={<span>-</span>}
           inputStyle={{
-            width: "2.5rem",
+            width: "90%",
             padding: "0.5rem 0.2rem",
             border: "1px solid #070F2B",
             borderRadius: "0.5rem",
