@@ -56,7 +56,7 @@ function HeaderMobile({ isOpen, setIsOpen, menus }) {
 
           <ul className="pt-[20%] w-full  flex flex-col gap-y-5">
             {menus.map((menu, index) => (
-              <li key={index} className="  text-white  mr-10">
+              <li key={index} className="  text-white  mr-10"  onClick={() =>setIsOpen(false)}>
                 <Link className="" href={menu.href}>
                   {menu.name}
                 </Link>

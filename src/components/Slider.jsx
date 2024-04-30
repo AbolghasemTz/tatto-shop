@@ -19,7 +19,7 @@ function Slider() {
                 width={30}
                 height={30}
                 alt=""
-                className="mr-2 z-50"
+                className="mr-2 "
               />
             </div>
             <h3 className="mt-3 md:text-2xl text-xl">را درب منزل تحویل بگیرید</h3>
@@ -33,7 +33,7 @@ function Slider() {
             <Link className="button btn btn_primary bg-[#1B6DC4] block md:w-40  text-center" href="/products">فروشگاه</Link>
           </div>
         </div>
-        <div className="md:mb-0 mb-12 flex md:h-80 md:w-80 h-60 w-60 ">
+        <div className="md:mb-0 mb-12 md:mt-0 mt-5 flex md:h-80 md:w-80 h-60 w-60 ">
           <Image
             src="/images/tatt.png"
             alt="tattoo shop"

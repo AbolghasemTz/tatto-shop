@@ -44,8 +44,9 @@ function CheckOtpForm({
             border: "1px solid #070F2B",
             borderRadius: "0.5rem",
           }}
+          
           containerStyle="flex flex-row-reverse gap-x-2 justify-center"
-          renderInput={(props) => <input type="number" {...props} />}
+          renderInput={(props) => <input type="number" {...props} inputMode="numeric"/>}
         />
         {checkOtpLoading ? (
           <Loading />
