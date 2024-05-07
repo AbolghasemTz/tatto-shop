@@ -140,3 +140,13 @@ table td {
   }
   
 }
+
+@media  (max-width: 500px) {
+  .slick-prev{
+    display: none !important;
+  }
+  
+  .slick-next{
+    display: none !important;
+  }
+}

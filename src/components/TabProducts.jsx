@@ -10,7 +10,7 @@ import Title from "@/common/Title";
 
 import AddToCart from "@/app/(user)/products/[slug]/AddToCart";
 function TabProducts() {
-  const { data, isLoading } = useGetProducts();
+  const { data } = useGetProducts();
   const { products } = data || {};
   const selectedProducts = products?.slice(0, 6);
   const settings = {
@@ -38,6 +38,7 @@ function TabProducts() {
           slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 2,
+          
         },
       },
       {
@@ -50,9 +51,9 @@ function TabProducts() {
     ],
   };
   return (
-    <div className="">
+    <div >
       <Title className="text-center my-10" title="جدیدترین محصولات" />
-      <div className="slider-container md:mb-20 mb-28 md:w-[90%] w-[75%] mx-auto ">
+      <div className="slider-container md:mb-20 mb-28 md:w-[92%] w-[95%] mx-auto ">
         <Slider {...settings}>
           {selectedProducts?.map((product) => (
             <div key={product._id}>
@@ -77,11 +78,15 @@ function TabProducts() {
                       product.offPrice && "hidden sm:block"
                     }`}
                   >
-                    {toPersianNumberWithComma(product.price)}تومان
+                   تومان {toPersianNumberWithComma(product.price)}
                   </span>
-                  <span className="text-sm sm:text-base  text-[#353535] mx-2">
-                    {toPersianNumberWithComma(product.offPrice)}تومان
-                  </span>
+                  <div className="flex justify-center">
+                  <span>تومان</span>
+                  <p className="text-sm sm:text-base  text-[#353535] mx-2">
+                   
+                    {toPersianNumberWithComma(product.offPrice)}
+                  </p>
+                  </div>
                 </div>
                 <div className="flex justify-center items-center">
                   <AddToCart product={product} />

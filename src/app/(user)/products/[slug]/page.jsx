@@ -15,7 +15,7 @@ async function page({ params }) {
       <ContentInfo product={product} />
 
       {/* sticky bottom in mobile */}
-      <div className="md:hidden fixed flex items-center justify-between left-0 right-0 bottom-0 w-full bg-white shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)] px-4 py-2 gap-x-4">
+      {/* <div className="md:hidden fixed flex items-center justify-between left-0 right-0 bottom-0 w-full bg-white shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)] px-4 py-2 gap-x-4">
         <AddToCart product={product} />
         <div className="text-slate-800 flex flex-col items-end">
           <span className="font-bold">
@@ -25,7 +25,7 @@ async function page({ params }) {
           </span>
           <span className="text-gray-400 text-sm">تومان</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

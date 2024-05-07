@@ -44,10 +44,10 @@ function Product({ products }) {
                 className={`line-through text-xs sm:text-sm  text-[#777777] ${product.offPrice && "hidden sm:block"
                   }`}
               >
-                {toPersianNumberWithComma(product.price)}تومان
+              تومان  {toPersianNumberWithComma(product.price)}
               </span>
               <span className="text-sm sm:text-base  text-[#353535] mx-2">
-                {toPersianNumberWithComma(product.offPrice)}تومان
+               {toPersianNumberWithComma(product.offPrice)} تومان
               </span>
             </div>
             <hr />

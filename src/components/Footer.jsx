@@ -56,7 +56,7 @@ function Footer() {
           </ul>
         </div>
 
-      
+
 
         <div className="md:col-span-4  col-span-12 text-white">
           <h3 className="font-bold tracking-wider text-2xl md:mt-0 mt-6">
@@ -66,28 +66,22 @@ function Footer() {
           <div className="mt-6">
             <div className="flex items-center justify-between">
               <p>شنبه</p>
-              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
-            </div>
+              <p>{toPersianNumbers("9")}صبح - {toPersianNumbers("21")}عصر</p>            </div>
             <div className="flex items-center justify-between mt-4">
               <p>یک شنبه</p>
-              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
-            </div>
+              <p>{toPersianNumbers("9")}صبح - {toPersianNumbers("21")}عصر</p>            </div>
             <div className="flex items-center justify-between mt-4">
               <p>دوشنبه</p>
-              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
-            </div>
+              <p>{toPersianNumbers("9")}صبح - {toPersianNumbers("21")}عصر</p>            </div>
             <div className="flex items-center justify-between mt-4">
               <p>سه شنبه</p>
-              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
-            </div>
+              <p>{toPersianNumbers("9")}صبح - {toPersianNumbers("21")}عصر</p>            </div>
             <div className="flex items-center justify-between mt-4">
               <p>چهار شنبه</p>
-              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
-            </div>
+              <p>{toPersianNumbers("9")}صبح - {toPersianNumbers("21")}عصر</p>            </div>
             <div className="flex items-center justify-between mt-4">
               <p>پنج شنبه</p>
-              <p>صبح{toPersianNumbers("9 - 21")} عصر</p>
-            </div>
+              <p>{toPersianNumbers("9")}صبح - {toPersianNumbers("21")}عصر</p>            </div>
             <div className="flex items-center justify-between mt-4">
               <p> تعطیلات رسمی</p>
               <p>بسته</p>
@@ -101,7 +95,7 @@ function Footer() {
         <div className="md:col-span-6 col-span-12 text-white ">
           <div className="flex md:justify-start justify-center md:mt-0 mt-3">
             <h3 className="md:text-xl text-base md:mt-2 md:mr-3">
-            © کپی رایت 2022. تمامی حقوق محفوظ است
+              © کپی رایت 2022. تمامی حقوق محفوظ است
             </h3>
           </div>
         </div>

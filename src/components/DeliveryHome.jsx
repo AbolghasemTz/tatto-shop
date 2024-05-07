@@ -37,11 +37,11 @@ function DeliveryHome() {
           <div className="">
             {infoProducts?.map((item, index) => (
               <div key={index} className="flex items-center py-4">
-                <div className="ml-4 border border-[#1B6DC4] bg-[#1b6dc48c] w-14 h-14 flex justify-center items-center rounded-md">
+                <div className="ml-4 border p-2 border-[#1B6DC4] bg-[#1b6dc48c] md:w-14 md:h-14 flex justify-center items-center rounded-md">
                   {item.icon}
                 </div>
                 <div className="">
-                  {" "}
+              
                   <h4> {item.title} </h4>
                   <p className="text-xs pt-2">{item.desc}</p>
                 </div>
